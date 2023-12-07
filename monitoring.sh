@@ -19,13 +19,13 @@ while true; do
 
 	# Disk
 	used_disk=
-	perc_disk=
 	max_disk=
+	perc_disk=
 
 	# Print last boot
 	last_boot=$(who -b | awk '{print $3" "$4}')
 	# Print LVM use
-	if [ "lvm" -gt 0 ]; then
+	if [ "$(lsblk | grep 'lvm' | wc -l)" -gt 0 ]; then
 		lvm="yes"
 	else
 		lvm="no"
