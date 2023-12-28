@@ -47,6 +47,7 @@ uname -a
 ```sh
 sudo vim /proc/cpuinfo
 ```
+
 - Get memory info:
 ```sh
 free
@@ -93,6 +94,9 @@ vim /etc/network/interfaces
 ```sh
 ss -tunlp
 ```
+___
+
+## `cron` Commands
 
 - Get system's `crontab`:
 ```sh
@@ -113,7 +117,34 @@ sudo /etc/init.d/cron start
 ```sh
 ls /usr/bin/*session
 ```
+___
 
+## `ufw` Commands
+
+- Start `ufw`:
+```sh
+sudo ufw enable
+```
+
+- Stop `ufw`:
+```sh
+sudo ufw disable
+```
+
+- Get `ufw` status:
+```sh
+sudo ufw status
+```
+
+- Open a port:
+```sh
+sudo ufw allow <port>
+```
+
+- Close a port:
+```sh
+sudo ufw delete <port>
+```
 ___
 
 ## `sudo` Commands
@@ -210,33 +241,4 @@ sudo systemctl restart ssh
 - Get `ssh` service status:
 ```sh
 sudo service sshd status
-```
-
-___
-
-## `ufw` Commands
-
-- Start `ufw`:
-```sh
-sudo ufw enable
-```
-
-- Stop `ufw`:
-```sh
-sudo ufw disable
-```
-
-- Get `ufw` status:
-```sh
-sudo ufw status
-```
-
-- Open a port:
-```sh
-sudo ufw allow <port>
-```
-
-- Close a port:
-```sh
-sudo ufw delete <port>
 ```
