@@ -116,6 +116,11 @@ ss -tunlp
 crontab -u root -e
 ```
 
+- Check if there is a `GUI` installed:
+
+```sh
+ls /usr/bin/*session
+```
 
 ___
 
@@ -125,6 +130,8 @@ ___
 
 ```sh
 sudo -V
+# or
+dpkg -s sudo | grep Status
 ```
 
 - Create a new user:
@@ -156,15 +163,14 @@ sudo addgroup <groupname>
 sudo adduser <username> <group>
 ```
 
+- Get `PAM` password policy:
+```sh
+sudo vim /etc/pam.d/common-password
+```
+
 - Get `sudo_config` policy file:
 ```sh
 sudo vim /etc/sudoers.d/sudo_config
-```
-
-- Get `sudo` log file:
-
-```sh
-sudo vim /var/log/sudo/sudo_config
 ```
 
 - Get `sudo` log file:
@@ -250,4 +256,10 @@ sudo ufw status
 
 ```sh
 sudo ufw allow <port>
+```
+
+- Close a port:
+
+```sh
+sudo ufw delete <port>
 ```
