@@ -13,7 +13,7 @@ ___
 
 ## Constraints
 - [ ] Only minimum services must be installed;
-- [ ] [[X.org]] or any other equivalent graphics servers are forbidden;
+- [ ] X.org or any other equivalent graphics servers are forbidden;
 - [ ] Only either the latest stable version of [[Linux Debian|Debian]] or [[Rocky Linux|Rocky]] should be used;
 - [ ] [[Firewall]] 
 > - For [[Linux Debian|Debian]] [[AppArmor]] must be running at startup;
