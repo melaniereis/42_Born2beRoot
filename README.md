@@ -1223,8 +1223,12 @@ make
 make install
 ```
 
-
 ## Configuring `UnrealIRdC`
+
+- [ ] Open port `6667`:
+```sh
+sudo ufw allow 6667
+```
 
 - [ ] Change to the installation directory:
 ```sh
@@ -1249,109 +1253,55 @@ vim conf/unrealircd.conf
 ```
 
 > [!Note]
-> If you configured everything correctly, the server should be running on the **VM**, else go back to `unrealircd.conf` and fix the unset values.
+> If you configured everything correctly, the server should be running on the **VM**, else go back to `unrealircd.conf` and fix the unset values as instructed by the error message.
 
+___
+### Get WeeChat
 
-- [ ] Open port `6667`;
+For the purposes of this walkthrough, we will be using the **WeeChat** client, but you could use any IRC client out there in the wild.
 
-### Open WeeChat
+- [ ] Install **WeeChat**;
+```sh
+sudo apt install weechat
+```
+- [ ] Launch the `weechat` client:
+```sh
+weechat
+```
+- [ ] In case you don't have `sudo` on the machine, you can use the **Docker** container of `weechat`:
+```sh
+docker run -ti weechat/weechat
+```
 
+> [!Note]
+> More on `weechat` docker container:
+> - [weechat/weechat-container](https://github.com/weechat/weechat-container)
+
+- [ ] In `weechat` add `irc.passunca.org` server:
+```weechat
 /server add irc.passunca.org 10.11.246.116/6667 -notls
+```
+- [ ] Connect to `irc.passunca.org` server:
+```weechat
+/connect irc.passunca.org
+```
+- [ ] Join `#passunca42` channel:
+```weechat
+/join #passunca42
+```
 
+- [ ] Have fun getting your peers to connect and have some fun through their terminals with `weechat`!
 
+> [!Note]
+> - [WeeChat quick start guide](https://weechat.org/files/doc/stable/weechat_quickstart.en.html)
 ___
 ### Get Signature
 - [ ] Shut down the **VM**;
 - [ ] Locate the path where the **VM** is stored;
 - [ ] Run the following command to get the signature:
 ```sh
-
+sha1sum vm-name.vdi
 ```
-> -> `sha1sum vm-name.vdi`
-
-> [!Note]
-> Command: shasum
-> 
-
 - [ ] Clone the VM to avoid changing the obtained signature;
 
 ___
-___
-___
-
-
-
-
-
-
-
-
-
-### Bonus Services
-
-- [[Jitsi]] ( forbidden, uses [[NGINX]] )
-- [[UnrealIRCd]]
-
-____
-
-## Command Glossary
-### ON/OFF
-- Enter [[root]]
-> => `su`
-- Exit [[sudo]]
-> => `exit`
-
-- Turn VM off
-> `systemctl poweroff`
-- Reboot VM
-> `systemctl reboot`
-
-___
-### SSH
-- Restart [[SSH]]
-> `systemctl restart ssh`
-- Check [[SSH]] status
-> `service sshd status`
-
-___
-### System Info
-#### CPU
-- Get [[CPU]] info:
-> `cat /proc/cpuinfo`
-- [ ] Get the number of processing units available:
-> `nproc`
-
-
-#### Delete [[users]]
-
-`sudo deluser <username>`
-
-#### Change hostname
-
-`sudo hostnamectl set-hostname <name>`
-[hostnamectl(1) - Linux manual page](https://man7.org/linux/man-pages/man1/hostnamectl.1.html)
-
-##### More
-###### File System Docs
-- [command line - Differences between /bin, /sbin, /usr/bin, /usr/sbin, /usr/local/bin, /usr/local/sbin - Ask Ubuntu](https://askubuntu.com/questions/308045/differences-between-bin-sbin-usr-bin-usr-sbin-usr-local-bin-usr-local)
-- [/var](https://tldp.org/LDP/Linux-Filesystem-Hierarchy/html/var.html)
-- [server - Why is /var/www a recommended location to host your web app? - Ask Ubuntu](https://askubuntu.com/questions/877261/why-is-var-www-a-recommended-location-to-host-your-web-app)
-
-___
-### Bonus Service
-
-- Send output of [[crontab]] to email
-
-___
-# Repo Refs
-- [Born2beroot. 42 school project | by Baigalmaa Baatar | Medium](https://baigal.medium.com/born2beroot-e6e26dfb50ac)
-- [GitHub - ayoub0x1/born2beroot: Born2beroot (42cursus). This project aims to introduce you to the wonderful world of virtualization.](https://github.com/ayoub0x1/born2beroot)
-- [README\_EN.md](https://github.com/gemartin99/Born2beroot-Tutorial/blob/main/README_EN.md)
-rn2b
-- [GitHub - pasqualerossi/Born2BeRoot-Guide: Step-By-Step on How to Complete The Born2BeRoot Project.](https://github.com/pasqualerossi/Born2BeRoot-Guide)
-- [Born2beRoot - Guide](https://42-cursus.gitbook.io/guide/rank-01/born2beroot)
-- [Vusk/Born2beroot-Tutorial: This project aims to introduce you to the wonderful world of virtualization. - Born2beroot-Tutorial - Codeberg.org](https://codeberg.org/Vusk/Born2beroot-Tutorial)
-- [madebypixel02 / born2beroot-chriss1245 · GitLab](https://gitlab.com/madebypixel02/born2beroot-chriss1245)
-- [GitHub - ucefooo/born2beroot: Born2beroot project from 42 network with bonus](https://github.com/ucefooo/born2beroot)
-- [GitHub - souzitaaaa/42-Cursus-Born2beroot: A guide about how to make the project "Born2beroot"](https://github.com/souzitaaaa/42-Cursus-Born2beroot)
-- - [GitHub - gemartin99/Born2beroot-Tutorial: Tutorial to install Debian virtual machine with functional WordPress site with the following services: lighttpd, MariaDB, PHP and Litespeed.](https://github.com/gemartin99/Born2beroot-Tutorial)
