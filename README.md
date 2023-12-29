@@ -171,10 +171,7 @@ ___
 - [x] Select `Manual` partition method;
 - [x] Select the available volume;
 > [!Note]
->
-> Name: `VBOX HARDDISK`
->
-> The volume name may differ from system to system:
+> The volume name may differ from system to system. Example:
 >
 > `SCSI1 (0,0,0) (sda) - 33.1 GB ATA VBOX HARDDISK`
 - [x] Confirm the creation of a new empty partition;
@@ -194,7 +191,9 @@ ___
 - [x] Select `FREE SPACE` again;
 - [x] Create a new partition;
 - [x] Set the size to `max`;
->[!Important]+ Logical Partition size in Bytes
+>[!Important]
+> Logical Partition size in Bytes
+> 
 > `32554300416 B`
 - [x] Set partition type to `Logical`;
 - [x] Set Mount point to: `Do not mount it`;
@@ -209,7 +208,9 @@ ___
 - [x] Accept confirmation message to encrypt;
 - [x] Hit `Cancel` because there's nothing to encrypt;
 - [x] Set encryption passphrase;
-> [!IMPORTANT]+ User Password
+> [!IMPORTANT]
+> `user` Password
+> 
 > `Zedro42beCrypt`
 #### Configure Logical Volume Manager
 - [x] Click `Configure Logical Volume Manager`;
@@ -222,44 +223,58 @@ ___
 - [x] Select group: `LVMGroup`;
 - [x] Set the name of the logical volume: `root`;
 - [x] Set it's size to: `10g`;
->[!Important]+ root size in Bytes
->`10737418240 B`
+>[!Important]
+> `root` size in Bytes
+>
+> `10737418240 B`
 - [x] Select `Create logical volume`;
 - [x] Select group: `LVMGroup`;
 - [x] Set the name of the logical volume: `swap`;
 - [x] Set it's size to: `2.3g`;
->[!Important]+ swap size in Bytes
->`2465607424 B`
+> [!Important]
+> `swap` size in Bytes
+>
+> `2465607424 B`
 - [x] Select `Create logical volume`;
 - [x] Select group: `LVMGroup`;
 - [x] Set the name of the logical volume: `home`;
 - [x] Set it's size to: `5g`;
->[!Important]+ home size in Bytes
+>[!Important]
+> `home` size in Bytes
+>
 >`5368709120 B`
 - [x] Select `Create logical volume`;
 - [x] Select group: `LVMGroup`;
 - [x] Set the name of the logical volume: `var`;
 - [x] Set it's size to: `3g`;
->[!Important]+ var size in Bytes
+> [!Important]
+> `var` size in Bytes
+>
 >`3221225472 B`
 - [x] Select `Create logical volume`;
 - [x] Select group: `LVMGroup`;
 - [x] Set the name of the logical volume: `srv`;
 - [x] Set it's size to: `3g`;
->[!Important]+ srv size in Bytes
->`3221225472 B`
+> [!Important]
+> `srv` size in Bytes
+>
+> `3221225472 B`
 - [x] Select `Create logical volume`;
 - [x] Select group: `LVMGroup`;
 - [x] Set the name of the logical volume: `tmp`;
 - [x] Set it's size to: `3g`;
->[!Important]+ tmp size in Bytes
->`3221225472 B`
+> [!Important]
+> `tmp` size in Bytes
+>
+> `3221225472 B`
 - [x] Select `Create logical volume`;
 - [x] Select group: `LVMGroup`;
 - [x] Set the name of the logical volume: `var-log`;
 - [x] Set it's size to: `4g`;
->[!Important]+ srv size in Bytes
->`4294967296 B`
+> [!Important] 
+> `srv` size in Bytes
+>
+> `4294967296 B`
 - [x] Click `Finish`to end the configuration of the logical volumes;
 ##### Setting Mount Points
 - [x] Select partition #1, `home`;
@@ -277,8 +292,8 @@ ___
 - [x] Select partition #1, `swap`;
 - [x] Set `Use as` to `swap area`;
 
-> [!N] [[Swap Partition ]]
->
+> [!Note] 
+> Research **Swap Partition**
 
 - [x] Select `Done setting up the partition`;
 - [x] Select partition #1, `tmp`;
@@ -302,7 +317,7 @@ ___
 - [x] Leave HTTP proxy empty and click `Continue`;
 - [x] Say **NO** to the popularity contest;
 - [x] Remove all software options and press `Continue`;
-- [x] Say `Yes` to the installation of [[GRUB boot loader]];
+- [x] Say `Yes` to the installation of **GRUB boot loader**;
 - [x] Select device to install the bootloader: `/dev/sda (ata_VBOX_HARDDISK)`;
 - [x] Select `Continue`;
 
