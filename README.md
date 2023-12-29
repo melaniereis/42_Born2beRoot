@@ -1099,7 +1099,9 @@ ___
 ### Install & Configuring **UnrealIRCd**
 
 > [!Attention]
+>
 > Do **NOT** build and run the UnrealIRCd as **root** 
+>
 > It is recommended to run `UnrealIRCd` under an account with restricted privileges;
 
 ___
