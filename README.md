@@ -645,8 +645,8 @@ ___
 > - `free --mega | awk '$1 == "Mem:" {print $3}'`
 - [x] Get total amount of memory in the system:
 > - `free --mega | awk '$1 == "Mem:" {print $2}'`
-- [x]
-> `free --mega | awk '$1 == "Mem:" {printf("(%.2f%%)\n", $3/$2*100)}'
+- [x] Get used memory percentage:
+> `free --mega | awk '$1 == "Mem:" {printf("(%.2f%%)\n", $3/$2*100)}'`
 
 > [!Note]
 > Command: `awk`
@@ -665,7 +665,7 @@ ___
 
 > [!Note]
 > Command: `df`
-> **df** stands for `Disk Filesystem` command; Prints a summary about disk usage;
+> `df` stands for `Disk Filesystem` command; Prints a summary about disk usage;
 > - The `-m` flag prints prints result in MB;
 
 > [!Note]
