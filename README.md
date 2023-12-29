@@ -342,15 +342,23 @@ ___
 - [x] Enter user and password;
 ### Installing **sudo** & configuring groups and users
 - [x] Switch user to `root`:
-> => `su`
+```sh
+su
+```
 - [x] Insert `root` password;
 - [x] To install **sudo** run:
-> => `apt install sudo`;
+```sh
+apt install sudo`
+```
 - [x] Reboot the machine with the following command:
-> => `sudo reboot`;
+```sh
+sudo reboot
+```
 - [x] Login again with `user` and switch to `root`;
 - [x] Check **sudo**'s version with the command:
-> => `sudo -V`;
+```sh
+sudo -V
+```
 
 > [!Note]
 > This command displays the currently installed version of [[sudo]] (and other extra info like which plugins are installed);
@@ -359,7 +367,9 @@ ___
 > If the output is too large it can be redirected to a file with the following command: `sudo -V > file.txt`. Additionally the output could be piped `| more` to be conveniently displayed;
 
 - [x] Create a new user;
-> => `sudo adduser <login>`
+```sh
+sudo adduser <login>
+```
 
 > [!Important]
 > User Credentials
@@ -368,9 +378,13 @@ ___
 > password: `Zedro42beUser`
 
 - [x] Create a new group `user42`:
-> => `sudo addgroup user42`;
+```sh
+sudo addgroup user42
+```
 - [x] Include `passunca` on both `sudo` and `user42` groups:
-> => `sudo adduser <user> <groupname>`
+```sh
+sudo adduser <user> <groupname>
+```
 
 >[!Important] 
 > To check user groups and their users either:
@@ -379,18 +393,19 @@ ___
 > => `getent group`;
 > => `getent group <groupname>`;
 >  > Filters `getent` output;
+
 ____
 ### Installing **SSH**
-- [x] Update the system:
- => `sudo apt update`;
-> [!Note] 
-> Gets packages:
-> -> `bookworm`,
-> -> `bookworm-security`,
-> -> `bookworm-updates`
+- [x] Update the system package manager:
+```sh
+sudo apt update
+```
 
 - [x] Install **OpenSSH**:
-> => `sudo apt install openssh-server`;
+```sh
+sudo apt install openssh-server`
+```
+
 - [x] When asked for confirmation type `Y`;
 
 > [!Note]
@@ -401,13 +416,16 @@ ____
 ___
 #### Installing **vim**
 - [x] Run the command:
-> => `sudo apt install vim`;
-
+```sh
+sudo apt install vim
+```
 ___
 #### Configuring **SSH**
 - [x] If not `root` switch to it with `su`;
 - [x] Open `sshd_config` with vim:
-> => `vim /etc/ssh/sshd_config`
+```sh
+vim /etc/ssh/sshd_config
+```
 
 > [!Note] 
 > `sshd` – SSH server process
@@ -463,7 +481,9 @@ ___
 ### Close Unnecessary Connections
 
 - [ ] Check system sockets:
-> => `ss -tunlp`
+```sh
+ss -tunlp
+```
 
 > [!Important]
 > `ss`'s **flags**
@@ -472,11 +492,15 @@ ___
 > - `-n` or `--numeric`: Do not try to resolve service names into human-readable form. Show exact numeric values;
 > - `-l` or `--listening`: Display only listening sockets;
 > - [NetworkConfiguration - Debian Wiki](https://wiki.debian.org/NetworkConfiguration)
-
 - [x] Get `ip` address:
-- `ip --color addr`
+```sh
+ip --color addr
+```
 - [x] Get System's Network Interfaces
- - `vim /etc/network/interfaces`
+```sh
+vim /etc/network/interfaces
+```
+
 - [x] Editing it by setting `# The primary network interface` from `dhcp` to `static`:
 ```
 iface enp0s inet static
@@ -498,13 +522,23 @@ ___
 ### Installing & Configuring **UFW** 🔥🧱
 
 - [x] Install **UFW** packages:
-> => `sudo apt install ufw`;
+```sh
+sudo apt install ufw
+```
 - [x] Start **UFW** using the command
-> => `sudo ufw enable`;
+```sh
+sudo ufw enable
+```
+
 - [x] Configure **Firewall** to accept connections on 4242 port
-> => `sudo ufw allow 4242`;
+```sh
+sudo ufw allow 4242
+```
+
 - [x] Check the current state of the firewall
-> => `sudo ufw status`;
+```sh
+sudo ufw status
+```
 
 > [!Note]
 > Alternatively the firewall's state can be checked with
@@ -517,13 +551,19 @@ ___
 ___
 ### Configuring **sudo** policies and log
 - [x] Create the following file:
-> -> `touch /etc/sudoers.d/sudo_config`
+```sh
+touch /etc/sudoers.d/sudo_config
+```
+
 
 > [!Note]
 > This file will store the system's **sudo** policy
 
 - [x] Open `sudo_config` to setup policy
-> -> `vim /etc/sudoers.d/sudo_config`
+```sh
+vim /etc/sudoers.d/sudo_config
+```
+
 
 - [x] Add the following Defaults to the file:
 ```
@@ -555,7 +595,9 @@ Defaults  secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/
 > > - Separates `root path` from `user path`;
 
 - [x] Create the following directory:
-> - `mkdir /var/log/sudo`
+```sh
+mkdir /var/log/sudo
+```
 
 > [!Note]
 > This folder will store the system's **sudo** log
@@ -563,11 +605,20 @@ Defaults  secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/
 ___
 ### Change **hostname**  (for the defense)
 - [ ] Check current **hostname**:
-> `hostnamectl`
+```sh
+hostnamectl
+```
+
 - [ ] Change **hostname**:
-> `hostnamectl set-hostname <hostname>`
+```sh
+hostnamectl set-hostname <hostname>
+```
+
 - [ ] Edit **/etc/hosts**
-> `sudo vim /etc/hosts`
+```sh
+sudo vim /etc/hosts
+```
+
 - [ ] Change **old_hostname** to **new_hostname**
 ```sh
 127.0.0.1 localhost
@@ -580,31 +631,33 @@ sudo reboot hostnamectl
 ___
 ### Configuring Password Policy 🔑
 - [x] Open `login.defs`:
-> -> `vim /etc/login.defs`;
+```sh
+vim /etc/login.defs
+```
+
 - [x] Set `PASS_MAX_DAYS`to 30;
 - [x] Set `PASS_MIN_DAYS` to 2;
 - [x] Set `PASS_WARN_AGE` to 7;
 - [x] Update already created user's password policy:
-> `chage -M 30 -m 2 -W 7`
-> or
-> `passwd -x 30 -n 2 -w 7`
-> - [passwd(1) - Linux manual page](https://man7.org/linux/man-pages/man1/passwd.1.html)
-
-> [!Important] 
-> Check Password Policy applied to `<user>`
-> `chage -l <user>`
-> - [chage(1): change user password expiry info - Linux man page](https://linux.die.net/man/1/chage)
-
+```sh
+chage -M 30 -m 2 -W 7
+# or
+passwd -x 30 -n 2 -w 7
+```
 - [x] Install **libpam-pwquality**:
-> -> `sudo apt install libpam-pwquality`
+```sh
+sudo apt install libpam-pwquality
+```
 
 > [!Note]
 > Provides common functions for password quality checking and scoring based on their apparent randomness; this library also provides a function for generating random passwords with good pronounceability;
 > - [Debian -- Details of package libpam-pwquality in buster](https://packages.debian.org/buster/libpam-pwquality)
->
 
 - [x] Configure **libpam-pwquality**:
-> -> `sudo vim /etc/pam.d/common-password`
+```sh
+sudo vim /etc/pam.d/common-password
+```
+
 - [x] On the `per-package` section after `retry=3` add the following as inline options
 ```
 minlen=10
@@ -947,7 +1000,6 @@ dpkg -l | grep mariadb-server`
 sudo mysql_secure_installation
 ```
 
-
 > [!Note] 
 > More on `mysql_secure_installation`
 > Helps implement security recommendations such as:
@@ -1040,17 +1092,14 @@ ___
 ```sh
 cd /var/www/html
 ```
-
 - [x] Copy & Rename **wp-config-sample.php**:
 ```sh
 cp wp-config-sample.php wp-config.php
 ```
-
 - [x] Open **wp-config.php** for editing:
 ```sh
 vim wp-config.php
 ```
-
 - [x] Modify the following values:
 > => Set `database_name_here` to `wp_databse`;
 >
@@ -1061,22 +1110,18 @@ vim wp-config.php
 ```sh
 sudo lighty-enable-mod fastcgi
 ```
-
 - [x] Enable **lighttpd**'s **fastcgi-php** to improve the performance and speed of **PHP**-based web applications on the server;
 ```sh
 sudo lighty-enable-mod fastcgi-php
 ```
-
 - [x] Reload **lighttpd** to apply changes:
 ```sh
 sudo service lighttpd force-reload
 ```
-
 - [x] Get the VMs IP address:
 ```sh
 hostname -I
 ```
-
 - [x] Open the browser and type your address:
 > `<vm_ip_address>`
 - [x] Input the requested information to setup and install **WordPress**:
@@ -1108,13 +1153,14 @@ ___
 
 - [ ] Add a new user:
 ```sh
-
+sudo adduser ircd
 ```
-> => `sudo adduser ircd`
 
-> [!Important]+ User Credentials
-> login: `ircd`
-> password: `Zedro42beIRC`
+> [!Important]
+> `UnrealIRCd` User Credentials
+>
+> > login: `ircd`
+> > password: `Zedro42beIRC`
 
 > [!Note]
 > This creates a user unrealircd with a home directory of _/home/unrealircd_. Later on UnrealIRCd will be installed in _/home/unrealircd/unrealircd_.
