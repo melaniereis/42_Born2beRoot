@@ -421,7 +421,9 @@ ___
 - [x] Set `PermitRootLogin no`
 - [x] Save changes and close file;
 - [x] Open `ssh_config` with vim:
-> => `vim /etc/ssh/ssh_config`
+```sh
+vim /etc/ssh/ssh_config
+```
 
 > [!Note] 
 > `ssh_config` – **SSH** system-wide configuration file;
@@ -429,19 +431,31 @@ ___
 
 - [ ] Set Port to `Port 4242`;
 - [ ] Restart and update the **SSH** service:
-> => `sudo service ssh restart`
+```sh
+sudo service ssh restart
+```
+
 - [ ] Check service's state with:
-> => `sudo service ssh status`
+```sh
+sudo service ssh status
+```
 
 ___
 ### Connecting via **SSH**
+- [ ] Get **VM**'s IP:
+```sh
+hostname -I
+```
 - [ ] Close the VM and go to `Settings;
 - [ ] Click on `Network`, then `Advanced`; 
 - [ ] Change `Attached to:` from `NAT` to `Bridged Adapter`;
 - [ ] Click `OK`;
 - [ ] Re-open the **VM** and decrypt it:
-- [ ] Open a termanal and connect to the **VM**:
-> => `ssh passunca@10.11.246.116 -p 4242`
+- [ ] Open a terminal and connect to the **VM**:
+```sh
+ssh passunca@10.11.246.116 -p 4242
+```
+
 
 > [!Important] 
 > To Test the **SSH** connection:
