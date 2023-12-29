@@ -1099,7 +1099,7 @@ ___
 ### Install & Configuring **UnrealIRCd**
 
 > [!Important]
-> Do **NOT** build and run the UnrealIRCd as **root** 
+> Do **NOT** build and run the UnrealIRCd as **root**;
 >
 > It is recommended to run `UnrealIRCd` under an account with restricted privileges;
 
@@ -1107,59 +1107,102 @@ ___
 ## Creating a dedicated user
 
 - [ ] Add a new user:
+```sh
+
+```
 > => `sudo adduser ircd`
 
 > [!Important]+ User Credentials
 > login: `ircd`
-	> password: `Zedro42beIRC`
+> password: `Zedro42beIRC`
 
 > [!Note]
 > This creates a user unrealircd with a home directory of _/home/unrealircd_. Later on UnrealIRCd will be installed in _/home/unrealircd/unrealircd_.
 
 - [ ] Create a new group `bonus`:
-> => `sudo addgroup bonus`
+```sh
+sudo addgroup bonus
+```
+
 - [ ] Add user to group:
-> => `sudo adduser unrealircd bonus`
+```sh
+sudo adduser unrealircd bonus
+```
+
 
 > [!Important]
 > To change the logged in user:
-> => `su - ircd`
+```sh
+su ircd
+```
 
 ## Installing [[UnrealIRCd]]
 
 - [ ] As the new user's go to the **home** directory:
-> => `cd ~`
+```sh
+cd ~
+```
+
 - [ ] Get the source (.tar.gz):
-> => `wget --trust-server-names https://www.unrealircd.org/downloads/unrealircd-latest.tar.gz`
+```sh
+wget --trust-server-names https://www.unrealircd.org/downloads/unrealircd-latest.tar.gz
+```
+
 - [ ] Extract the source from archive:
-> => `tar xzvf unrealircd-6.1.X.tar.gz`
+```sh
+tar xzvf unrealircd-6.1.X.tar.gz
+```
+
  
 > [!Note]
 > Change the **X** in the version name to the version you downloaded
 
 - [ ] Run the **./Config** script which will ask a couple of questions. 
-> => `./Config` 
+```sh
+./Config`
+```
+
 - [ ] Press Enter to accept default answers
 - [ ] Compile [[UnrealIRCd]]:
-> => `make`
+```sh
+make
+```
+
 - [ ] and then run:
-> => `make install`
+```sh
+make install
+```
+
 
 ## Configuring [[UnrealIRCd]]
 
 - [ ] Change to the installation directory:
-> => `cd ~/unrealircd`
+```sh
+cd ~/unrealircd
+```
+
 - [ ] Copy **conf/examples/example.conf** into the **/conf** directory and rename it to **unreadlird.conf**
-> => `cp conf/examples/example.conf conf/unrealircd.conf`
+```sh
+cp conf/examples/example.conf conf/unrealircd.conf
+```
+
 - [ ] Open the file:
-> => `vim conf/unrealircd.conf` 
+```sh
+vim conf/unrealircd.conf 
+```
+
 - [ ] Rice the shit out of that file
-> 🍚 ( Change with actual config)
+> 🍚 
 
 - [ ] Boot [[UnrealIRCd]]:
->  => `./unrealircd start`
+```sh
+./unrealircd start
+```
+
 
 - [ ] Open port `6667`;
+
+### Open WeeChat
 
 /server add irc.passunca.org 10.11.246.116/6667 -notls
 
@@ -1169,6 +1212,9 @@ ___
 - [ ] Shut down the **VM**;
 - [ ] Locate the path where the **VM** is stored;
 - [ ] Run the following command to get the signature:
+```sh
+
+```
 > -> `sha1sum vm-name.vdi`
 
 > [!Note]
