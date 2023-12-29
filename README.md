@@ -170,15 +170,21 @@ ___
 [[Disk Partitions]]
 - [x] Select `Manual` partition method;
 - [x] Select the available volume;
-> [!Note]+ VBOX HARDDISK
+> [!Note]
+>
+> Name: `VBOX HARDDISK`
+>
 > The volume name may differ from system to system:
+>
 > `SCSI1 (0,0,0) (sda) - 33.1 GB ATA VBOX HARDDISK`
 - [x] Confirm the creation of a new empty partition;
 #### Create Primary Partition
 - [x] Select `FREE SPACE`;
 - [x] Create a new partition;
 - [x] Make the partition size `500m` in bytes:
-> [!Important]+ Primary Partition size in Bytes
+> [!Important]
+> Primary Partition size in Bytes
+>
 > `525336576 B`
 - [x] Set partition type to `Primary`;
 - [x] Set location for the new partition to `Beginning`;
