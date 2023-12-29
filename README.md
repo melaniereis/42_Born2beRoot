@@ -699,7 +699,9 @@ ___
 
 ### Get System Info
 - [x] Get system **Architecture** info:
-> - `uname -a`
+```sh
+uname -a
+```
 - [x] Get system's number of **Physical Cores**:
 ```sh
 grep "physical id" /proc/cpuinfo | wc -l
@@ -747,7 +749,8 @@ df -m | grep "/dev/" | grep -v "/boot" | awk '{used += $3} {total += $2} END {pr
 > [!Note]
 > Command: `df`
 >
-> `df` stands for `Disk Filesystem` command; Prints a summary about disk usage;
+> - Stands for `Disk Filesystem` command; 
+> - Prints a summary about disk usage;
 > - The `-m` flag prints prints result in MB;
 
 > [!Note]
@@ -768,9 +771,6 @@ vmstat 1 4 | tail -1 | awk '{print %15}'
 # or
 top -bn1 | tail +8 | awk '{ cpul += $9 } END { printf("%.1f"), cpul }'
 ```
-
-> [!Important]
-> To get the actual **CPU** usage subtract 100 from the command's return value;
 
 > [!Note] 
 > Command: `vmstat`
@@ -793,7 +793,7 @@ who -b | awk '$1 == "system" {print $3 " " $4}'
 > [!Note] 
 > Command: `who`
 >
->The command `who` when used with the `-b` flag prints the date and time of the last boot.
+> The command `who` when used with the `-b` flag prints the date and time of the last boot.
 
 ___
 ### **LVM** check
@@ -818,7 +818,6 @@ ___
 ```sh
 ss -ta | grep ESTAB | wc -l
 ```
-
 
 > [!Note]
 > Command: `ss`
@@ -852,15 +851,10 @@ ip link | grep "link/ether" | awk '{print $2}'
 > Command: `hostname`
 > 
 > To change `hostname` edit
-> -> `vim /etc/hosts`
+> - `vim /etc/hosts`
 > and
-> -> `vim /etc/hostname`
+> - `vim /etc/hostname`
 >
-
-> [!Note]
-> Command: `ip`
->
-> ( UPDATE )
 
 ___
 ### Number of commands invoked by `sudo`
