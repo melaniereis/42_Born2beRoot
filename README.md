@@ -769,16 +769,20 @@ ___
 > - `_COMM=sudo` filters out everything but `sudo` executions;
 ___
 
-**Put monitoring script together**
-
+### **Put monitoring script together**
+> - [monitoring.sh](./monitoring_scripts/monitoring.sh)
 ___
 ### **Crontab**
 - [x] Edit the `crontab` file
 > -> `sudo crontab -u root -e`
 - [x] Configure a script to execute every 10 minutes:
 > -> `*/10 * * * * sh /usr/local/bin/monitoring.sh`
+- [ ] Create `sleep.sh` script to delay the monitoring dump, syncing it with the login time by the minute:
+> - [sleep.sh](./monitoring_scripts/sleep.sh)
 - [x] To make it be precise to the minute edit `crontab` to run `sleep.sh` script to delay the monitoring dump
-> -> `*/10 * * * * sh /usr/local/bin/sleep.sh; sh /usr/local/bin/monitoring.sh`
+```
+`*/10 * * * * sh /usr/local/bin/sleep.sh; sh /usr/local/bin/monitoring.sh`
+```
 
 > [!Note]
 > Command: `crontab`
