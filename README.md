@@ -716,6 +716,7 @@ top -bn1 | tail +8 | awk '{ cpul += $9 } END { printf("%.1f"), cpul }'
 
 > [!Note] 
 > Command: `vmstat`
+>
 > `vmstat` reports information with details about the processes , memory usage, CPU activity, system status, etc.
 > - The options `1 4` define an interval in seconds
 
