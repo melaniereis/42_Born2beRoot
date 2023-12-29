@@ -635,13 +635,13 @@ ___
 ## Monitoring Script 🚨
 
 ### Get System Info
-- [x] Get system `Architecture` info:
+- [x] Get system **Architecture** info:
 > - `uname -a`
-- [x] Get system's number of `Physical Cores`:
+- [x] Get system's number of **Physical Cores**:
 > - `grep "physical id" /proc/cpuinfo | wc -l`
-- [x] Get system's number of `Virtual Cores`:
+- [x] Get system's number of **Virtual Cores**:
 > - `grep processor /proc/cpuinfo | wc -l`
-- [x] Get amount of used RAM:
+- [x] Get amount of used **RAM**:
 > - `free --mega | awk '$1 == "Mem:" {print $3}'`
 - [x] Get total amount of memory in the system:
 > - `free --mega | awk '$1 == "Mem:" {print $2}'`
