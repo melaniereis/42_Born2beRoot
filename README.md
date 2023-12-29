@@ -12,6 +12,8 @@
     <img src="https://img.shields.io/github/last-commit/PedroZappa/Born2beRoot?style=for-the-badge" />
 </p>
 
+</div>
+
 ![VM MEME](IMG/VM_MEME.jpeg)
 
 # About
