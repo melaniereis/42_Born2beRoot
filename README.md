@@ -807,6 +807,11 @@ ___
 
 ### **Put monitoring script together**
 > - [monitoring.sh](./monitoring_scripts/monitoring.sh)
+
+- [ ] To test the script execute the script as `su`
+```sh
+sudo /usr/local/bin/monitoring.sh
+```
 ___
 ### **Crontab**
 - [ ] Edit the `crontab` file
@@ -818,7 +823,6 @@ sudo crontab -u root -e
 ```sh
 */10 * * * * sh /usr/local/bin/monitoring.sh
 ```
-
 - [ ] Create `sleep.sh` script to delay the monitoring dump, syncing it with the login time by the minute:
 > - [sleep.sh](./monitoring_scripts/sleep.sh)
 - [ ] To make it be precise to the minute edit `crontab` to run `sleep.sh` script to delay the monitoring dump
@@ -838,11 +842,6 @@ sudo crontab -u root -e
 > - `command` = The absolute path of the script to be executed;
 
 
-### Run Script every 10 minutes since boot
-- [ ] To test the script execute the script as `su`
-```sh
-sudo /usr/local/bin/monitoring.sh
-```
 
 ___
 ## Bonus Services
