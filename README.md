@@ -1096,10 +1096,10 @@ hostname -I
 > - Have some fun!
 
 ___
-### Install & Configuring **UnrealIRCd**
+### Install & Configuring `UnrealIRCd`
 
 > [!Important]
-> Do **NOT** build and run the UnrealIRCd as **root**;
+> Do **NOT** build and run the `UnrealIRCd` as **root**;
 >
 > It is recommended to run `UnrealIRCd` under an account with restricted privileges;
 
@@ -1136,7 +1136,7 @@ sudo adduser unrealircd bonus
 su ircd
 ```
 
-## Installing **UnrealIRCd**
+## Installing `UnrealIRCd`
 
 - [ ] As the new user's go to the **home** directory:
 ```sh
@@ -1163,7 +1163,7 @@ tar xzvf unrealircd-6.1.X.tar.gz
 ```
 
 - [ ] Press Enter to accept default answers
-- [ ] Compile **UnrealIRCd**:
+- [ ] Compile `UnrealIRCd`:
 ```sh
 make
 ```
@@ -1174,7 +1174,7 @@ make install
 ```
 
 
-## Configuring **UnrealIRCd**
+## Configuring `UnrealIRdC`
 
 - [ ] Change to the installation directory:
 ```sh
@@ -1194,7 +1194,7 @@ vim conf/unrealircd.conf
 - [ ] Rice the shit out of that file
 > 🍚 
 
-- [ ] Boot [[UnrealIRCd]]:
+- [ ] Boot `UnrealIRCd`:
 ```sh
 ./unrealircd start
 ```
