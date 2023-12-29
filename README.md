@@ -348,7 +348,7 @@ su
 - [x] Insert `root` password;
 - [x] To install **sudo** run:
 ```sh
-apt install sudo`
+apt install sudo
 ```
 - [x] Reboot the machine with the following command:
 ```sh
