@@ -922,7 +922,9 @@ sudo chmod -R 755 html
 ```
 
 > `-R` : Call command recursively;
+>
 > `7` : Read/Write/Execute Permissions;
+>
 > `5` : Read/Execute Permissions;
 
 ____
