@@ -860,34 +860,67 @@ ___
 
 ### Setup `lighttpd` to serve **WordPress**
 - [x] Install `lighttpd`  packages:
-> => `sudo apt install lighttpd`
+```sh
+sudo apt install lighttpd
+```
+
 - [x] Check if `lighttpd` was successfully installed:
-> => `dpkg -l | grep lighttpd`
+```sh
+dpkg -l | grep lighttpd
+```
+
 - [x] Open a connection on `port 80` by running:
-> => `sudo ufw allow 80`
+```sh
+sudo ufw allow 80
+```
+
 - [x] Check available port status
-> => `sudo ufw status`
+```sh
+sudo ufw status
+```
+
 
 ___
 ### Installing **WordPress**
 - [x] Get `wget` and `zip` packages:
-> => `sudo apt install wget zip`
+```sh
+sudo apt install wget zip
+```
+
 - [x] Go to the `/var/www/` directory:
-> => `cd /var/www/`
+```sh
+cd /var/www/
+```
+
 
 > [!Note]
 > => [server - Why is /var/www a recommended location to host your web app? - Ask Ubuntu](https://askubuntu.com/questions/877261/why-is-var-www-a-recommended-location-to-host-your-web-app)
 
 - [x] Get **WordPress** packages:
-> => `sudo wget https://wordpress.org/latest.zip`
+```sh
+sudo wget https://wordpress.org/latest.zip
+```
+
 - [x] Unzip archive:
-> => `sudo unzip latest.zip`
+```sh
+sudo unzip latest.zip
+```
+
 - [x] Rename `html/` folder to `html_old/`;
-> => `sudo mv html/ html_old/`
+```sh
+sudo mv html/ html_old/
+```
+
 - [x] Rename `wordpress/` folder to `html`/
-> => `sudo mv wordpress/ html/`
+```sh
+sudo mv wordpress/ html/
+```
+
 - [x] Set permissions for `html/` folder:
-> => `sudo chmod -R 755 html`
+```sh
+sudo chmod -R 755 html
+```
+
 > 	/== `-R` : Call command recursively;
 > 	/== `7` : Read/Write/Execute Permissions;
 > 	/== `5` : Read/Execute Permissions;
@@ -895,11 +928,20 @@ ___
 ____
 ### Installing **MariaDB**
 - [x] Install **MariaDB** packages:
-> => `sudo apt install mariadb-server`
+```sh
+sudo apt install mariadb-server
+```
+
 - [x] Check if **MariaDB** installed successfully;
-> => `dpkg -l | grep mariadb-server`
+```sh
+dpkg -l | grep mariadb-server`
+```
+
 - [x] Get Security package that restricts access to the server and removed unused accounts:
-> => `sudo mysql_secure_installation`
+```sh
+sudo mysql_secure_installation
+```
+
 
 > [!Note] 
 > More on `mysql_secure_installation`
