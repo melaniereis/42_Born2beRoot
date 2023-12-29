@@ -394,23 +394,25 @@ ____
 - [x] When asked for confirmation type `Y`;
 
 > [!Note]
-> To check the state of the system's [[SSH]] service:
+> To check the state of the system's **SSH** service:
 > -> `sudo service ssh status`;
 > The service must be shown as `Active`;
 
 ___
-#### Installing [[vim]]
+#### Installing **vim**
 - [x] Run the command:
 > => `sudo apt install vim`;
 
 ___
-#### Configuring [[SSH]]
+#### Configuring **SSH**
 - [x] If not `root` switch to it with `su`;
 - [x] Open `sshd_config` with vim:
 > => `vim /etc/ssh/sshd_config`
 
-> [!Note] `sshd` – SSH server process
-> `sshd` is the [[OpenSSH]] server process. It listens to incoming connections using the [[SSH]] protocol and acts as the server for the protocol. It handles user authentication, encryption, terminal connections, file transfers, and tunneling.
+> [!Note] 
+> `sshd` – SSH server process
+>
+> `sshd` is the **OpenSSH** server process. It listens to incoming connections using the **SSH** protocol and acts as the server for the protocol. It handles user authentication, encryption, terminal connections, file transfers, and tunneling.
 > - [sshd: OpenSSH server process | SSH Academy](https://www.ssh.com/academy/ssh/sshd)
 > - [sshd\_config - How to Configure the OpenSSH Server?](https://www.ssh.com/academy/ssh/sshd_config)
 > - [sshd\_config(5): OpenSSH SSH daemon config file - Linux man page](https://linux.die.net/man/5/sshd_config)
@@ -422,34 +424,37 @@ ___
 > => `vim /etc/ssh/ssh_config`
 
 > [!Note] `ssh_config`
-> [[SSH]] system-wide configuration file;
+> **SSH** system-wide configuration file;
 > - [ssh\_config(5): OpenSSH SSH client config files - Linux man page](https://linux.die.net/man/5/ssh_config)
 
 - [x] Set Port to `Port 4242`;
-- [x] Restart and update the [[SSH]] service:
+- [x] Restart and update the **SSH** service:
 > => `sudo service ssh restart`
 - [x] Check service's state with:
 > => `sudo service ssh status`
 ___
-### Connecting via [[SSH]]
+### Connecting via **SSH**
 - [x] Close the VM and go to `Settings;
 - [x] Click ion `Network`, then `Advanced`, then `Port forwarding`;
 - [x] Click on the icon (top right corner) to add a new rule;
 - [x] Set the port for `host` and `client` to 4242;
-> [[IP]]s are not required!
-- [x] Back in the VM restart [[SSH]] server
+> **IP**s are not required!
+- [x] Back in the VM restart **SSH** server
 > => `sudo systemctl restart ssh`
-- [ ] Check [[SSh]] status:
+- [ ] Check **SSH** status:
 > => `sudo service sshd status`
 
-#### To Test the [[SSH]] connection:
-- [ ] On the VM:
+> [!Important] 
+> To Test the **SSH** connection:
+> - On the **VM** side:
+>
 > => `hostname -I`
-- [ ] Connect host side (terminal)
+> - [ ] Connect host side (terminal)
 > => `ssh passunca@10.11.246.116 -p 4242`
-- [ ] To close the connection:
+> - [ ] To close the connection:
 > => `exit`
 
+___
 ### Close Unnecessary Connections
 
 - [x] Check system sockets:
