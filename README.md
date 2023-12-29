@@ -535,6 +535,7 @@ Defaults  secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/
 > `passwd_tries`=> total tried for entering **sudo** password;
 >
 > `badpass_message` => Message to be printed when password is wrong;
+>
 > `logfile` => Set custom log file for **sudo**;
 >
 > `log_input, log_output` => What will be logged;
@@ -545,12 +546,11 @@ Defaults  secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/
 >
 > `secure_path` => The **PATH** used for every command run with **sudo**:
 >
-> -> Used when a system admin doesn't trust **sudo** users to have a secure **PATH** environment variable;
->
-> -> Separates `root path` from `user path`;
+> > - Used when a system admin doesn't trust **sudo** users to have a secure **PATH** environment variable;
+> > - Separates `root path` from `user path`;
 
 - [x] Create the following directory:
-> -> `mkdir /var/log/sudo`
+> - `mkdir /var/log/sudo`
 
 > [!Note]
 > This folder will store the system's **sudo** log
