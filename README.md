@@ -958,7 +958,7 @@ sudo mysql_secure_installation
 > **Refs**
 > - [MySQL :: MySQL 8.0 Reference Manual :: 4.4.2 mysql\_secure\_installation — Improve MySQL Installation Security](https://dev.mysql.com/doc/refman/8.0/en/mysql-secure-installation.html)
 
-Sett `mysql_secure_installation` options as follows:
+Set `mysql_secure_installation` options as follows:
 - [x] **Because the root account is already protected** press enter to proceed with the configuration process;
 - [x] **Switch to unix_socket authentication? → N**
 > Choose `N` because the root is already protected;
@@ -969,7 +969,7 @@ Sett `mysql_secure_installation` options as follows:
 - [x] **Disallow root login remotely? → Y**
 > Ensures that a bad actor cannot guess at the root password from the network
 - [x] **Remove test database and access to it? → Y**
-> By default [[MariaDB]] comes with a `test` DB that anyone can access, remove it;
+> By default **MariaDB** comes with a `test` DB that anyone can access, remove it;
 - [x] **Reload privilege tables now? → Y**
 > Choose `Y` to reload permission tables so that the security settings take effect immediately
 
