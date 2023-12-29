@@ -585,7 +585,8 @@ ___
 > `passwd -x 30 -n 2 -w 7`
 > - [passwd(1) - Linux manual page](https://man7.org/linux/man-pages/man1/passwd.1.html)
 
-> [!Important] Check Password Policy applied to `<user>`
+> [!Important] 
+> Check Password Policy applied to `<user>`
 > `chage -l <user>`
 > - [chage(1): change user password expiry info - Linux man page](https://linux.die.net/man/1/chage)
 
