@@ -106,9 +106,11 @@ ___
 
 ![Partitions Bonus IMG](IMG/partitions_bonus.jpeg)
 
-- [ ] Set up a functional [[WordPress]] website with the following services: [[lighttpd]], [[MariaDB]] and [[PHP]];
-- [ ] Set up a service of your choice that you think is useful ([[NGINX]] / [[Apache2]] excluded!) 
-> To complete the bonus part, there is the possibility of setting up extra services. In this case, you may open more ports to suit your needs. Of course, the [[UFW]]/[[Firewalld]] rules has to be adapted accordingly.
+- [ ] Set up a functional **WordPress** website with the following services: **lighttpd**, **MariaDB** and **PHP**;
+- [ ] Set up a service of your choice that you think is useful (**NGINX** / **Apache2** excluded!) 
+
+> [!Important]
+> To complete the bonus part, there is the possibility of setting up extra services. In this case, you may open more ports to suit your needs. Of course, the **UFW**/**Firewalld** rules has to be adapted accordingly.
 
 ___
 
@@ -117,7 +119,7 @@ ___
 # Walkthrough
 
 ## Installing the Virtual Machine 🛠
-- [x] Open [[VirtualBox]] and click `new`;
+- [x] Open **VirtualBox** and click `new`;
 - [x] Give the VM a name;
 - [x] Store the VM inside `/sgoinfre/` directory;
 - [x] Select total amount of RAM to reserve for the machine;
