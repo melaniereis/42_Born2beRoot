@@ -921,6 +921,9 @@ sudo mv wordpress/ html/
 sudo chmod -R 755 html
 ```
 
+> [!Note]
+> Command: `chmod` flags
+>
 > `-R` : Call command recursively;
 >
 > `7` : Read/Write/Execute Permissions;
