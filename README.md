@@ -334,27 +334,28 @@ ___
 
 > [!IMPORTANT]
 > Research **Ext4**
+
 ___
 ## Virtual Machine Setup ⚙️
 ### Login into the system
 - [x] Enter encryption password;
 - [x] Enter user and password;
-### Installing [[sudo]] & configuring groups and users
+### Installing **sudo** & configuring groups and users
 - [x] Switch user to `root`:
 > => `su`
 - [x] Insert `root` password;
-- [x] To install [[sudo]] run:
+- [x] To install **sudo** run:
 > => `apt install sudo`;
 - [x] Reboot the machine with the following command:
 > => `sudo reboot`;
 - [x] Login again with `user` and switch to `root`;
-- [x] Check [[sudo]]'s version with the command:
+- [x] Check **sudo**'s version with the command:
 > => `sudo -V`;
 
 > [!Note]
 > This command displays the currently installed version of [[sudo]] (and other extra info like which plugins are installed);
 
-> [!Important]+ Extra
+> [!Attention]
 > If the output is too large it can be redirected to a file with the following command: `sudo -V > file.txt`. Additionally the output could be piped `| more` to be conveniently displayed;
 
 - [x] Create a new user;
