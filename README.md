@@ -873,6 +873,11 @@ ___
 ### **Put monitoring script together**
 > - [monitoring.sh](./monitoring_scripts/monitoring.sh)
 
+- [ ] Place `monitoring.sh` at:
+```sh
+/usr/local/bin
+```
+
 - [ ] To test the script execute:
 ```sh
 sudo /usr/local/bin/monitoring.sh
