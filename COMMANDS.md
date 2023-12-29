@@ -69,6 +69,8 @@ vmstat
 - Get boot info:
 ```sh
 who -b
+# or
+uptime
 ```
 
 - List block devices:
@@ -200,7 +202,6 @@ sudo vim /var/log/sudo/sudo_config
 ```sh
 journalctl
 ```
-
 ___
 
 ## `ssh` Commands
@@ -234,7 +235,6 @@ vim /etc/ssh/ssh_config
 ```sh
 sudo systemctl restart ssh
 ```
-
 
 - Get `ssh` service status:
 ```sh
