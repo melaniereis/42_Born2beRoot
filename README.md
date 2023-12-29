@@ -375,6 +375,7 @@ sudo adduser <login>
 > User Credentials
 > 
 > login: `zedro`
+>
 > password: `Zedro42beUser`
 
 - [x] Create a new group `user42`:
@@ -390,8 +391,10 @@ sudo adduser <user> <groupname>
 > To check user groups and their users either:
 >
 > Switch user to `root`:
-> => `getent group`;
-> => `getent group <groupname>`;
+>
+> - `getent group`;
+>
+> - `getent group <groupname>`;
 >  > Filters `getent` output;
 
 ____
@@ -410,7 +413,9 @@ sudo apt install openssh-server`
 
 > [!Note]
 > To check the state of the system's **SSH** service:
-> -> `sudo service ssh status`;
+>
+> - `sudo service ssh status`;
+>
 > The service must be shown as `Active`;
 
 ___
@@ -543,8 +548,8 @@ sudo ufw status
 > [!Note]
 > Alternatively the firewall's state can be checked with
 >
-> => `sudo ufw status verbose`
-> => `sudo ufw status numbered`
+> - `sudo ufw status verbose`
+> - `sudo ufw status numbered`
 > ### Refs
 > - [UFW: Common Firewall Rules and Commands – TecAdmin](https://tecadmin.net/ufw-common-firewall-rules-and-commands/)
 
