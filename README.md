@@ -858,17 +858,7 @@ sudo crontab -u root -e
 ___
 ## Bonus Services
 
-### Extra CLI Tools
-- [x] get `curl`:
-> -> `apt curl
-- [x] get `wget`:
-> -> `apt wget`
--ga [x] Get `zsh`:
-> -> `apt install zsh`
-- [x] Get `tmux`:
-> -> `apt install tmux`
-___
-### Setup `lighttpd` to serve **Wordpress**
+### Setup `lighttpd` to serve **WordPress**
 - [x] Install `lighttpd`  packages:
 > => `sudo apt install lighttpd`
 - [x] Check if `lighttpd` was successfully installed:
