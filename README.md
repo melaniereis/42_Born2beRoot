@@ -638,15 +638,26 @@ ___
 - [x] Get system **Architecture** info:
 > - `uname -a`
 - [x] Get system's number of **Physical Cores**:
-> - `grep "physical id" /proc/cpuinfo | wc -l`
+```
+`grep "physical id" /proc/cpuinfo | wc -l`
+```
 - [x] Get system's number of **Virtual Cores**:
-> - `grep processor /proc/cpuinfo | wc -l`
+```
+`grep processor /proc/cpuinfo | wc -l`
+```
 - [x] Get amount of used **RAM**:
-> - `free --mega | awk '$1 == "Mem:" {print $3}'`
+```
+`free --mega | awk '$1 == "Mem:" {print $3}'`
+```
 - [x] Get total amount of memory in the system:
-> - `free --mega | awk '$1 == "Mem:" {print $2}'`
+```
+`free --mega | awk '$1 == "Mem:" {print $2}'`
+```
 - [x] Get used memory percentage:
-> `free --mega | awk '$1 == "Mem:" {printf("(%.2f%%)\n", $3/$2*100)}'`
+```
+`free --mega | awk '$1 == "Mem:" {printf("(%.2f%%)\n", $3/$2*100)}'`
+```
+
 
 > [!Note]
 > Command: `awk`
