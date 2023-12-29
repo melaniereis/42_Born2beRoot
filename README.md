@@ -722,6 +722,7 @@ top -bn1 | tail +8 | awk '{ cpul += $9 } END { printf("%.1f"), cpul }'
 
 > [!Note] 
 > Command: `tail`
+>
 > The **tail** command when used with the `-1` flag outputs only the last line received from the previous command;
 
 ___
@@ -733,7 +734,8 @@ who -b | awk '$1 == "system" {print $3 " " $4}'
 
 > [!Note] 
 > Command: `who`
-> The command `who` when used with the `-b` flag prints the date and time of the last boot.
+>
+>The command `who` when used with the `-b` flag prints the date and time of the last boot.
 
 ___
 ### **LVM** check
