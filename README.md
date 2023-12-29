@@ -1241,13 +1241,15 @@ cp conf/examples/example.conf conf/unrealircd.conf
 vim conf/unrealircd.conf 
 ```
 
-- [ ] Rice the shit out of that file
-> 🍚 
+- [ ] read carefully through the configuration file and change default placeholders where instructed to;
 
 - [ ] Boot `UnrealIRCd`:
 ```sh
 ./unrealircd start
 ```
+
+> [!Note]
+> If you configured everything correctly, the server should be running on the **VM**, else go back to `unrealircd.conf` and fix the unset values.
 
 
 - [ ] Open port `6667`;
