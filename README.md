@@ -146,7 +146,7 @@ ___
 - [x] Set country to `Portugal`;
 - [x] Set locales to `United States`;
 - [x] Set keyboard to `American English`;
-- [x] Set a `Host Name` for the VM:
+- [x] Set a `hostname` for the VM:
 > [!Important]
 > **hostname**'s name:
 >
