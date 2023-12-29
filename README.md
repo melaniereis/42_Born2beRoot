@@ -855,8 +855,7 @@ ___
 > -> `apt install zsh`
 - [x] Get `tmux`:
 > -> `apt install tmux`
-- [x] Get `starship` Prompt
-
+___
 ### Setup `lighttpd`
 - [x] Install `lighttpd`  packages:
 > => `sudo apt install lighttpd`
