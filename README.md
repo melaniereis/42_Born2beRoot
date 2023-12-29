@@ -639,23 +639,23 @@ ___
 > - `uname -a`
 - [x] Get system's number of **Physical Cores**:
 ```
-`grep "physical id" /proc/cpuinfo | wc -l`
+grep "physical id" /proc/cpuinfo | wc -l
 ```
 - [x] Get system's number of **Virtual Cores**:
 ```
-`grep processor /proc/cpuinfo | wc -l`
+grep processor /proc/cpuinfo | wc -l
 ```
 - [x] Get amount of used **RAM**:
 ```
-`free --mega | awk '$1 == "Mem:" {print $3}'`
+free --mega | awk '$1 == "Mem:" {print $3}'
 ```
 - [x] Get total amount of memory in the system:
 ```
-`free --mega | awk '$1 == "Mem:" {print $2}'`
+free --mega | awk '$1 == "Mem:" {print $2}'
 ```
 - [x] Get used memory percentage:
 ```
-`free --mega | awk '$1 == "Mem:" {printf("(%.2f%%)\n", $3/$2*100)}'`
+free --mega | awk '$1 == "Mem:" {printf("(%.2f%%)\n", $3/$2*100)}'
 ```
 
 
@@ -668,11 +668,18 @@ ___
 > for more on the **free** command;
 
 - [x] Get amount of used disk memory:
-> - `df -Bm | grep "/dev/" | grep -v "/boot" | awk '{used += $3} END {print used}'`
+```
+df -Bm | grep "/dev/" | grep -v "/boot" | awk '{used += $3} END {print used}'
+```
 - [x] Get system's total Disk space:
-> - `df -m | grep "/dev/" | grep -v "/boot/" | awk '{total_mem += $2} END {printf ("%.0fGb\n"), total_mem/1024}'`
+```
+df -m | grep "/dev/" | grep -v "/boot/" | awk '{total_mem += $2} END {printf ("%.0fGb\n"), total_mem/1024}'
+```
+
 - [x] Get used memory percentage
-> - `df -m | grep "/dev/" | grep -v "/boot" | awk '{used += $3} {total += $2} END {printf("(%d%%)\n"), used/total*100}'`
+```
+df -m | grep "/dev/" | grep -v "/boot" | awk '{used += $3} {total += $2} END {printf("(%d%%)\n"), used/total*100}'
+```
 
 > [!Note]
 > Command: `df`
@@ -693,35 +700,42 @@ ___
 ___
 ### CPU Information
 - [x] Get percentage of **CPU** usage:
-> `vmstat 1 4 | tail -1 | awk '{print %15}'`
-> or
-> `top -bn1 | tail +8 | awk '{ cpul += $9 } END { printf("%.1f"), cpul }'`
+```
+vmstat 1 4 | tail -1 | awk '{print %15}'
+# or
+top -bn1 | tail +8 | awk '{ cpul += $9 } END { printf("%.1f"), cpul }'
+```
 
 > [!Important]
 > To get the actual **CPU** usage subtract 100 from the command's return value;
 
 > [!Note] 
 > Command: `vmstat`
-> **vmstat** reports information with details about the processes , memory usage, CPU activity, system status, etc.
+> `vmstat` reports information with details about the processes , memory usage, CPU activity, system status, etc.
 > - The options `1 4` define an interval in seconds
 
 > [!Note] 
-> Command: tail
+> Command: `tail`
 > The **tail** command when used with the `-1` flag outputs only the last line received from the previous command;
 
 ___
 ### Last Reboot
 - [x] Get Date and Time of last reboot:
-> -> `who -b | awk '$1 == "system" {print $3 " " $4}'`
+```
+who -b | awk '$1 == "system" {print $3 " " $4}'
+```
 
 > [!Note] 
-> Command: who
-> The command **who** when used with the `-b` flag prints the date and time of the last boot
+> Command: `who`
+> The command `who` when used with the `-b` flag prints the date and time of the last boot.
 
 ___
 ### **LVM** check
 - [x] Check if **LVM** is active:
-> -> `if [ $(lsblk | grep "lvm" | wc -l) -gt 0 ]; then echo yes; else echo no; fi`
+```
+if [ $(lsblk | grep "lvm" | wc -l) -gt 0 ]; then echo yes; else echo no; fi
+```
+
 
 > [!Important]
 > - `$(...)` is a command substitution;
@@ -735,6 +749,9 @@ ___
 ___
 ### **TCP** connection
 - [x] Check for the number of established **TCP** connections:
+```
+
+```
 > -> `ss -ta | grep ESTAB | wc -l`
 
 > [!Note]
@@ -744,6 +761,9 @@ ___
 ___
 ### Number of users
 - [x] Get number of users:
+```
+
+```
 > -> `users | wc -w`
 
 > [!Note]
@@ -753,8 +773,14 @@ ___
 ___
 ### **IP Address** & **MAC**
 - [x] Get host IP address
+```
+
+```
 > -> `hostname -I`
 - [x] Get the MAC address
+```
+
+```
 > -> `ip link | grep "link/ether" | awk '{print $2}'`
 
 > [!Note]
@@ -773,6 +799,9 @@ ___
 ___
 ### Number of commands invoked by `sudo`
 - [x] Get number of commands invoked by `sudo`
+```
+
+```
 > -> `journalctl _COMM=sudo | grep COMMAND | wc -l`
 
 > [!Note]
@@ -786,8 +815,14 @@ ___
 ___
 ### **Crontab**
 - [x] Edit the `crontab` file
+```
+
+```
 > -> `sudo crontab -u root -e`
 - [x] Configure a script to execute every 10 minutes:
+```
+
+```
 > -> `*/10 * * * * sh /usr/local/bin/monitoring.sh`
 - [ ] Create `sleep.sh` script to delay the monitoring dump, syncing it with the login time by the minute:
 > - [sleep.sh](./monitoring_scripts/sleep.sh)
@@ -809,6 +844,9 @@ ___
 
 ### Run Script every 10 minutes since boot
 - [ ] To test the script execute the script as `su`
+```
+
+```
 > => `sudo /usr/local/bin/monitoring.sh`
 
 ___
