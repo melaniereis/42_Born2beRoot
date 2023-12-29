@@ -1023,21 +1023,20 @@ MariaDB [(none)]> exit
 > - [MariaDB List Users](https://linuxhint.com/mariadb-list-users/)
 
 ____
-### Installing [[PHP]]
-- [x] Get [[php-cgi]] and [[php-mysql]]:
+### Installing **PHP**
+- [x] Get **php-cgi** and **php-mysql**:
 ```sh
 sudo apt install php-cgi php-mysql
 ```
 
-- [x] Check if [[PHP]] installed successfully:
+- [x] Check if **PHP** installed successfully:
 ```sh
 dpkg -l | grep php
 ```
 
-
 ___
-### Configuring [[WordPress]]
-- [x] Get into **/var/www/html** directory:
+### Configuring **WordPress**
+- [x] Get into `/var/www/html` directory:
 ```sh
 cd /var/www/html
 ```
@@ -1054,7 +1053,9 @@ vim wp-config.php
 
 - [x] Modify the following values:
 > => Set `database_name_here` to `wp_databse`;
+>
 > => Set `username_here` to `passunca`;
+>
 > => Set `password_here` to `Zedro42beDB`;
 - [x] Enable [[lighttpd]]'s [[fastcgi]] to improve the performance and speed of web apps on the server;
 ```sh
