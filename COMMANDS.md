@@ -165,7 +165,7 @@ ___
 ```sh
 sudo -V
 # or
-dpkg -s sudo | grep Status
+dpkg -s sudo
 ```
 
 - Create a new user:
