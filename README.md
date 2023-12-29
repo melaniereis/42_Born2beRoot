@@ -1098,8 +1098,7 @@ hostname -I
 ___
 ### Install & Configuring **UnrealIRCd**
 
-> [!Attention]
->
+> [!Important]
 > Do **NOT** build and run the UnrealIRCd as **root** 
 >
 > It is recommended to run `UnrealIRCd` under an account with restricted privileges;
