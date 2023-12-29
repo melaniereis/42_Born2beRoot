@@ -1007,8 +1007,8 @@ MariaDB [(none)]> FLUSH PRIVILEGES
 ```
 
 - [x] List all present users of **MariaDB**:
-```sh
-SELECT User FROM mysql.user;
+```sql
+MariaDB [(none)]> SELECT User FROM mysql.user;
 ```
 
 - [x] When done exit **MariaDB**
