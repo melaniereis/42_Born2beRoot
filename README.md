@@ -489,7 +489,7 @@ apt install git
 
 > [!Note]
 > [networking - UFW/IPTables: how to securely allow authenticated git access with github - Server Fault](https://serverfault.com/questions/370743/ufw-iptables-how-to-securely-allow-authenticated-git-access-with-github)
-
+___
 ### Installing & Configuring **UFW** 🔥🧱
 
 - [x] Install **UFW** packages:
@@ -557,9 +557,9 @@ Defaults  secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/
 
 ___
 ### Change **hostname**  (for the defense)
-- [ ] Check current [[hostname]]:
+- [ ] Check current **hostname**:
 > `hostnamectl`
-- [ ] Change [[hostname]]:
+- [ ] Change **hostname**:
 > `hostnamectl set-hostname <hostname>`
 - [ ] Edit **/etc/hosts**
 > `sudo vim /etc/hosts`
@@ -590,7 +590,7 @@ ___
 > `chage -l <user>`
 > - [chage(1): change user password expiry info - Linux man page](https://linux.die.net/man/1/chage)
 
-- [x] Install [[libpam-pwquality]]:
+- [x] Install **libpam-pwquality**:
 > -> `sudo apt install libpam-pwquality`
 
 > [!Note]
@@ -598,7 +598,7 @@ ___
 > - [Debian -- Details of package libpam-pwquality in buster](https://packages.debian.org/buster/libpam-pwquality)
 >
 
-- [x] Configure [[libpam-pwquality]]:
+- [x] Configure **libpam-pwquality**:
 > -> `sudo vim /etc/pam.d/common-password`
 - [x] On the `per-package` section after `retry=3` add the following as inline options
 ```
@@ -612,14 +612,22 @@ difok=7
 enforce_for_root
 ```
 
-> [!Legend]
+> [!Important]
+>
 > `minlen` => Minimum characters a password must have;
+>
 > `ucredit` => Password must contain at least one Uppercase char; must be set with a `-` sign to reference the lower bound; if set with `+` defines an upper bound;
+>
 > `dcredit` => Password must contain at least one `digit`;
+>
 > `lcredit` => Password must contain at least one `lowercase` letter;
+>
 > `maxrepeat` => Password must not repeat the same character consecutively `n` number of times;
+>
 > `reject_username` => Password must not contain the username;
+>
 > `difok` => Password must contain at least `n` different characters from the previously used password;
+>
 > `enforce_for_root` => Implement password policy to root;
 
 ___
@@ -628,181 +636,182 @@ ___
 
 ### Get System Info
 - [x] Get system `Architecture` info:
-> -> `uname -a`
+> - `uname -a`
 - [x] Get system's number of `Physical Cores`:
-> -> `grep "physical id" /proc/cpuinfo | wc -l`
+> - `grep "physical id" /proc/cpuinfo | wc -l`
 - [x] Get system's number of `Virtual Cores`:
-> -> `grep processor /proc/cpuinfo | wc -l`
+> - `grep processor /proc/cpuinfo | wc -l`
 - [x] Get amount of used RAM:
-> -> `free --mega | awk '$1 == "Mem:" {print $3}'`
+> - `free --mega | awk '$1 == "Mem:" {print $3}'`
 - [x] Get total amount of memory in the system:
-> -> `free --mega | awk '$1 == "Mem:" {print $2}'`
+> - `free --mega | awk '$1 == "Mem:" {print $2}'`
 - [x]
 > `free --mega | awk '$1 == "Mem:" {printf("(%.2f%%)\n", $3/$2*100)}'
 
-> [!Command: awk]
-> [[awk]] filters [[free]]'s output by checking if `$1` (first word) on each line equals (for instance) `"Mem:"`, and print only the lines that meet this condition;
+> [!Note]
+> Command: `awk`
+> **awk** filters **free**'s output by checking if `$1` (first word) on each line equals (for instance) `"Mem:"`, and print only the lines that meet this condition;
 
-> [!Command: free]
-> for more on the [[free]] command;
+> [!Note]
+> Command: `free`
+> for more on the **free** command;
 
 - [x] Get amount of used disk memory:
-> -> `df -Bm | grep "/dev/" | grep -v "/boot" | awk '{used += $3} END {print used}'`
+> - `df -Bm | grep "/dev/" | grep -v "/boot" | awk '{used += $3} END {print used}'`
 - [x] Get system's total Disk space:
-> -> `df -m | grep "/dev/" | grep -v "/boot/" | awk '{total_mem += $2} END {printf ("%.0fGb\n"), total_mem/1024}'`
+> - `df -m | grep "/dev/" | grep -v "/boot/" | awk '{total_mem += $2} END {printf ("%.0fGb\n"), total_mem/1024}'`
 - [x] Get used memory percentage
-> -> `df -m | grep "/dev/" | grep -v "/boot" | awk '{used += $3} {total += $2} END {printf("(%d%%)\n"), used/total*100}'`
+> - `df -m | grep "/dev/" | grep -v "/boot" | awk '{used += $3} {total += $2} END {printf("(%d%%)\n"), used/total*100}'`
 
-> [!Command: df]
-> [[df]] stands for `Disk Filesystem` command; Prints a summary about disk usage;
+> [!Note]
+> Command: `df`
+> **df** stands for `Disk Filesystem` command; Prints a summary about disk usage;
 > - The `-m` flag prints prints result in MB;
 
-> [!Command: grep]
-> - Filter output with [[grep]] to select only lines containing `/dev/`;
+> [!Note]
+> Command: `grep`
+> - Filter output with **grep** to select only lines containing `/dev/`;
 > - To exclude lines containing `/boot/` call [[grep]] with the `-v` flag;
 
-> [!Important]+ Command [[awk]]
+> [!Note] 
+> Command `awk`
 > - `awk '{memory_use += $3} END {print memory_use}'` gets the sum of the values on the 3rd column of each line and prints the final result;
 >
 
 ___
 ### CPU Information
-- [x] Get percentage of [[CPU]] usage:
+- [x] Get percentage of **CPU** usage:
 > `vmstat 1 4 | tail -1 | awk '{print %15}'`
 > or
 > `top -bn1 | tail +8 | awk '{ cpul += $9 } END { printf("%.1f"), cpul }'`
 
 > [!Important]
-> To get the actual [[CPU]] usage subtract 100 from the command's return value;
+> To get the actual **CPU** usage subtract 100 from the command's return value;
 
-> [!Command: vmstat]
-> [[vmstat]] reports information with details about the processes , memory usage, CPU activity, system status, etc.
+> [!Note] 
+> Command: `vmstat`
+> **vmstat** reports information with details about the processes , memory usage, CPU activity, system status, etc.
 > - The options `1 4` define an interval in seconds
 
-> [!Command: tail]
-> The [[tail]] command when used with the `-1`flag outputs only the last line received from the previous command;
+> [!Note] 
+> Command: tail
+> The **tail** command when used with the `-1` flag outputs only the last line received from the previous command;
 
 ___
 ### Last Reboot
 - [x] Get Date and Time of last reboot:
 > -> `who -b | awk '$1 == "system" {print $3 " " $4}'
 
-> [!Command: who]
-> The command [[who]] when used with the `-b`flag prints the date and time of the last boot
+> [!Note] 
+> Command: who
+> The command **who** when used with the `-b` flag prints the date and time of the last boot
 
 ___
-### [[LVM]] check
-- [x] Check if [[LVM]] is active:
+### **LVM** check
+- [x] Check if **LVM** is active:
 > -> `if [ $(lsblk | grep "lvm" | wc -l) -gt 0 ]; then echo yes; else echo no; fi`
 
 > [!Important]
 > - `$(...)` is a command substitution;
 > Executes the command inside the parentheses and replaces it with it's output;
-> - In bash the `-gt` flag is the `Greater Than` [[Comparison Operators|Comparison Operator]] used for arithmetic operations in bash scripting;
+> - In bash the `-gt` flag is the `Greater Than` **Comparison Operator** used for arithmetic operations in bash scripting;
 
-> [!Command: lsblk]
-> The [[lsblk]] command displays information about all available block devices (Hard Drives, SSDs, memories, etc)
+> [!Note]
+> Command: lsblk
+> The **lsblk** command displays information about all available block devices (Hard Drives, SSDs, memories, etc)
 
 ___
 ### [[TCP]] connection
-- [x] Check for the number of established [[TCP]] connections:
+- [x] Check for the number of established **TCP** connections:
 > -> `ss -ta | grep ESTAB | wc -l`
 
 > [!Command: ss]
-> The [[ss]] command (replacing the now obsolete [[netstat]]) is a utility to investigate sockets; It can display more [[TCP]] and state information than other tools.
+> The **ss** command (replacing the now obsolete **netstat**) is a utility to investigate sockets; It can display more **TCP** and state information than other tools.
 
 ___
 ### Number of users
 - [x] Get number of users:
 > -> `users | wc -w`
 
-> [!Command: users]
-> The command [[users]] displays the number of users define for the system;
+> [!Note]
+> Command: users
+> The command **users** displays the number of users define for the system;
 
 ___
-### [[IP Address]] & [[MAC Address|MAC]]
+### **IP Address** & **MAC**
 - [x] Get host IP address
 > -> `hostname -I`
 - [x] Get the MAC address
 > -> `ip link | grep "link/ether" | awk '{print $2}'`
 
-> [!Command: hostname]
-> To change hostname edit
+> [!Note]
+> Command: `hostname`
+> To change `hostname` edit
 > -> `vim /etc/hosts`
 > and
 > -> `vim /etc/hostname`
 >
 
-> [!Command: ip]
+> [!Note]
+> Command: `ip`
 >
+> ( UPDATE )
 
 ___
-### Number of commands invoked by [[sudo]]
-- [x] Get number of commands invoked by [[sudo]]
+### Number of commands invoked by `sudo`
+- [x] Get number of commands invoked by `sudo`
 > -> `journalctl _COMM=sudo | grep COMMAND | wc -l`
 
-> [!Command: journaclctl]
-> The command [[journaclctl]] collects and manages system logs;
-> - `_COMM=sudo` filters out everything but [[sudo]] executions;
+> [!Note]
+> Command: `journaclctl`
+> The command `journaclctl` collects and manages system logs;
+> - `_COMM=sudo` filters out everything but `sudo` executions;
+___
+
+**Put monitoring script together**
 
 ___
-**Put monitoring script together**
-___
-### [[crontab|Crontab]]
-- [x] Edit the [[crontab]] file
+### **Crontab**
+- [x] Edit the `crontab` file
 > -> `sudo crontab -u root -e`
 - [x] Configure a script to execute every 10 minutes:
 > -> `*/10 * * * * sh /usr/local/bin/monitoring.sh`
-- [x] To make it be precise to the minute edit crontab to run `sleep.sh` script to delay the monitoring dump
+- [x] To make it be precise to the minute edit `crontab` to run `sleep.sh` script to delay the monitoring dump
 > -> `*/10 * * * * sh /usr/local/bin/sleep.sh; sh /usr/local/bin/monitoring.sh``
 
-
-
-> [!Command: crontab]
-> Small description of each [[crontab]] parameter:
+> [!Note]
+> Command: `crontab`
+> Small description of each `crontab` parameter:
 > - `m` = The minute at which the script will execute (ranges from 0 to 59);
 > - `h` = The hour at which the script will execute (ranges from  0 to 23);
-> - `dom`= The day of the month;
-> - `dow`= The day of the week can be numeric (ranging from 0 to 7, where 0 and 7 are Sunday) or alphabetical (`mon`, `tue`, `wed`, `thu`, `fri`, `sat`, `sun`);
-> - `user`= Defines the user who will execute the command (can be `root` or otherwise the user must have permission to execute);
+> - `dom` = The day of the month;
+> - `dow` = The day of the week can be numeric (ranging from 0 to 7, where 0 and 7 are Sunday) or alphabetical (`mon`, `tue`, `wed`, `thu`, `fri`, `sat`, `sun`);
+> - `user` = Defines the user who will execute the command (can be `root` or otherwise the user must have permission to execute);
 > - `command` = The absolute path of the script to be executed;
 
 
 ### Run Script every 10 minutes since boot
-- [ ] To test the script execute the script as [[su]]
+- [ ] To test the script execute the script as `su`
 > => `sudo /usr/local/bin/monitoring.sh`
 
 ___
-### Get Signature
-- [ ] Shut down the VM;
-- [ ] Locate the path where the VM is stored;
-- [ ] Run the following command to get the signature:
-> -> `shasum vm-name.vdi`
+## Bonus Services
 
-> [!Command: shasum]
-
-- [ ] Clone the VM to avoid changing the obtained signature;
-
-
-
-___
-## Bonus Services Config
-
-### Bonus CLI Tools
-- [x] get [[curl]]
+### Extra CLI Tools
+- [x] get `curl`:
 > -> `apt curl
-- [x] get [[wget]]
+- [x] get `wget`:
 > -> `apt wget`
-- [x] Get [[zsh]]:
+- [x] Get `zsh`:
 > -> `apt install zsh`
-- [x] Get [[tmux]]:
+- [x] Get `tmux`:
 > -> `apt install tmux`
-- [x] Get [[starship]] Prompt
+- [x] Get `starship` Prompt
 
-### Setup [[lighttpd]]
-- [x] Install [[lighttpd]]  packages:
+### Setup `lighttpd`
+- [x] Install `lighttpd`  packages:
 > => `sudo apt install lighttpd`
-- [x] Check if [[lighttpd]] was successfully installed:
+- [x] Check if `lighttpd` was successfully installed:
 > => `dpkg -l | grep lighttpd`
 - [x] Open a connection on `port 80` by running:
 > => `sudo ufw allow 80`
@@ -810,49 +819,49 @@ ___
 > => `sudo ufw status`
 
 ( THIS MAY NEED TO BE REMOVED )
-- [ ] Got back to [[VirtualBox]] GUI and:
+- [ ] Got back to **VirtualBox** GUI and:
 > `Settings`->`Network`->`Advanced`->`Port-forwarding`->`Replicate capture`
 - [ ] Add Rule that includes `port 80`;
 
 ___
-### Installing [[WordPress]]
-- [x] Get [[wget]] and [[zip]] packages:
+### Installing **WordPress**
+- [x] Get `wget` and `zip` packages:
 > => `sudo apt install wget zip`
-- [x] Go to the **/var/www/** directory:
+- [x] Go to the `/var/www/` directory:
 > => `cd /var/www/`
 
-> [!Important]
+> [!Note]
 > => [server - Why is /var/www a recommended location to host your web app? - Ask Ubuntu](https://askubuntu.com/questions/877261/why-is-var-www-a-recommended-location-to-host-your-web-app)
 
-- [x] Get [[WordPress]] packages:
+- [x] Get **WordPress** packages:
 > => `sudo wget https://wordpress.org/latest.zip`
 - [x] Unzip archive:
 > => `sudo unzip latest.zip`
-- [x] Rename **html/** folder to **html_old/**;
+- [x] Rename `html/` folder to `html_old/`;
 > => `sudo mv html/ html_old/`
-- [x] Rename **wordpress/** folder to **html/**
+- [x] Rename `wordpress/` folder to `html`/
 > => `sudo mv wordpress/ html/`
-- [x] Set permissions for **html/** folder:
+- [x] Set permissions for `html/` folder:
 > => `sudo chmod -R 755 html`
 > 	/== `-R` : Call command recursively;
 > 	/== `7` : Read/Write/Execute Permissions;
 > 	/== `5` : Read/Execute Permissions;
 
 ____
-### Installing [[MariaDB]]
-- [x] Install [[MariaDB]] packages:
+### Installing **MariaDB**
+- [x] Install **MariaDB** packages:
 > => `sudo apt install mariadb-server`
-- [x] Check if [[MariaDB]] installed successfully;
+- [x] Check if **MariaDB** installed successfully;
 > => `dpkg -l | grep mariadb-server`
 - [x] Get Security package that restricts access to the server and removed unused accounts:
 > => `sudo mysql_secure_installation`
 
-> [!N] More on `mysql_secure_installation`
+> [!Note] 
+> More on `mysql_secure_installation`
 > Helps implement security recommendations such as:
 > - Enables setting a password for root accounts;
 > - Enables removal of root accounts accessible from outside of the host;
 > - Enables removal of anonymous-user accounts;
-> -
 >
 > **Refs**
 > - [MySQL :: MySQL 8.0 Reference Manual :: 4.4.2 mysql\_secure\_installation — Improve MySQL Installation Security](https://dev.mysql.com/doc/refman/8.0/en/mysql-secure-installation.html)
@@ -873,29 +882,31 @@ Sett `mysql_secure_installation` options as follows:
 > Choose `Y` to reload permission tables so that the security settings take effect immediately
 
 ___
-### Configuring [[MariaDB]]
+### Configuring **MariaDB**
 
-- [x] Enter [[MariaDB]]:
+- [x] Enter **MariaDB**:
 > => `sudo mariadb`
-- [x] Create a database for [[WordPress]]:
+- [x] Create a database for **WordPress**:
 > `MariaDB [(none)]> CREATE DATABASE wp_database;`
->  /== [[wp_database]]
+>  /== **wp_database**
 - [x] Check if DB was successfully created:
 > => `MariaDB [(none)]> SHOW DATABASES;`
-- [x] Create a user for the DB:
+- [x] Create a user for the database:
 > => `MariaDB [(none)]> CREATE USER 'passunca'@'localhost' IDENTIFIED BY '424242';`
 - [x] Bind the new user to the new DB to grant him permissions to work:
 > => `MariaDB [(none)]> GRANT ALL PRIVILEGES ON wp_database.* TO 'passunca'@'localhost';`
 - [x] Update Privileges for changes to take place:
 > => `MariaDB [(none)]> FLUSH PRIVILEGES`
-- [x] List all present users of [[MariaDB]]:
+- [x] List all present users of **MariaDB**:
 > => `SELECT User FROM mysql.user;`
-- [x] When done exit [[MariaDB]]
+- [x] When done exit **MariaDB**
 > => `MariaDB [(none)]> exit`
 
-> [!N] Useful links on [[MySQL]] & [[MariaDB]]
+> [!Note] 
+> Useful links on **MySQL** & **MariaDB**
 > - [What is MySQL? Everything You Need to Know | Talend](https://www.talend.com/resources/what-is-mysql/)
 > - [MariaDB List Users](https://linuxhint.com/mariadb-list-users/)
+
 ____
 ### Installing [[PHP]]
 - [x] Get [[php-cgi]] and [[php-mysql]]:
@@ -941,6 +952,23 @@ ___
 ### Install & Configure [[UnrealIRCd]]
 
 ___
+### Get Signature
+- [ ] Shut down the **VM**;
+- [ ] Locate the path where the **VM** is stored;
+- [ ] Run the following command to get the signature:
+> -> `sha1sum vm-name.vdi`
+
+> [!Note]
+> Command: shasum
+> 
+
+- [ ] Clone the VM to avoid changing the obtained signature;
+
+___
+___
+___
+
+
 ### Bonus Services
 
 - [[Jitsi]] ( forbidden, uses [[NGINX]] )
