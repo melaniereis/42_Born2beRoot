@@ -153,12 +153,16 @@ ___
 > `passunca42`;
 - [x] Leave network settings blank (not required by the subject);
 - [x] Set password for `root` user;
-> [!IMPORTANT]+ Root Password
+> [!IMPORTANT]
+> `Root` Password:
+>
 > `Zedro42beRoot`
 - [x] Set user full name for user: `passunca`;
 - [x] Set user username: `passunca`;
 - [x] Set user password;
-> [!IMPORTANT]+ User Password
+> [!IMPORTANT]
+> `User` Password:
+>
 > `Zedro42beUser`
 - [x] Set clock to Lisbon;
 ___
