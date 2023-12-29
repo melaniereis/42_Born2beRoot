@@ -638,23 +638,23 @@ ___
 - [x] Get system **Architecture** info:
 > - `uname -a`
 - [x] Get system's number of **Physical Cores**:
-```
+```sh
 grep "physical id" /proc/cpuinfo | wc -l
 ```
 - [x] Get system's number of **Virtual Cores**:
-```
+```sh
 grep processor /proc/cpuinfo | wc -l
 ```
 - [x] Get amount of used **RAM**:
-```
+```sh
 free --mega | awk '$1 == "Mem:" {print $3}'
 ```
 - [x] Get total amount of memory in the system:
-```
+```sh
 free --mega | awk '$1 == "Mem:" {print $2}'
 ```
 - [x] Get used memory percentage:
-```
+```sh
 free --mega | awk '$1 == "Mem:" {printf("(%.2f%%)\n", $3/$2*100)}'
 ```
 
@@ -668,16 +668,16 @@ free --mega | awk '$1 == "Mem:" {printf("(%.2f%%)\n", $3/$2*100)}'
 > for more on the **free** command;
 
 - [x] Get amount of used disk memory:
-```
+```sh
 df -Bm | grep "/dev/" | grep -v "/boot" | awk '{used += $3} END {print used}'
 ```
 - [x] Get system's total Disk space:
-```
+```sh
 df -m | grep "/dev/" | grep -v "/boot/" | awk '{total_mem += $2} END {printf ("%.0fGb\n"), total_mem/1024}'
 ```
 
 - [x] Get used memory percentage
-```
+```sh
 df -m | grep "/dev/" | grep -v "/boot" | awk '{used += $3} {total += $2} END {printf("(%d%%)\n"), used/total*100}'
 ```
 
@@ -700,7 +700,7 @@ df -m | grep "/dev/" | grep -v "/boot" | awk '{used += $3} {total += $2} END {pr
 ___
 ### CPU Information
 - [x] Get percentage of **CPU** usage:
-```
+```sh
 vmstat 1 4 | tail -1 | awk '{print %15}'
 # or
 top -bn1 | tail +8 | awk '{ cpul += $9 } END { printf("%.1f"), cpul }'
@@ -721,7 +721,7 @@ top -bn1 | tail +8 | awk '{ cpul += $9 } END { printf("%.1f"), cpul }'
 ___
 ### Last Reboot
 - [x] Get Date and Time of last reboot:
-```
+```sh
 who -b | awk '$1 == "system" {print $3 " " $4}'
 ```
 
@@ -732,10 +732,9 @@ who -b | awk '$1 == "system" {print $3 " " $4}'
 ___
 ### **LVM** check
 - [x] Check if **LVM** is active:
-```
+```sh
 if [ $(lsblk | grep "lvm" | wc -l) -gt 0 ]; then echo yes; else echo no; fi
 ```
-
 
 > [!Important]
 > - `$(...)` is a command substitution;
@@ -749,10 +748,10 @@ if [ $(lsblk | grep "lvm" | wc -l) -gt 0 ]; then echo yes; else echo no; fi
 ___
 ### **TCP** connection
 - [x] Check for the number of established **TCP** connections:
+```sh
+ss -ta | grep ESTAB | wc -l
 ```
 
-```
-> -> `ss -ta | grep ESTAB | wc -l`
 
 > [!Note]
 > Command: `ss`
@@ -761,27 +760,24 @@ ___
 ___
 ### Number of users
 - [x] Get number of users:
+```sh
+users | wc -w
 ```
-
-```
-> -> `users | wc -w`
 
 > [!Note]
-> Command: users
+> Command: `users`
 > The command `users` displays the number of users define for the system;
 
 ___
 ### **IP Address** & **MAC**
 - [x] Get host IP address
+```sh
+hostname -I
 ```
-
-```
-> -> `hostname -I`
 - [x] Get the MAC address
+```sh
+ip link | grep "link/ether" | awk '{print $2}'
 ```
-
-```
-> -> `ip link | grep "link/ether" | awk '{print $2}'`
 
 > [!Note]
 > Command: `hostname`
@@ -799,10 +795,9 @@ ___
 ___
 ### Number of commands invoked by `sudo`
 - [x] Get number of commands invoked by `sudo`
+```sh
+journalctl _COMM=sudo | grep COMMAND | wc -l
 ```
-
-```
-> -> `journalctl _COMM=sudo | grep COMMAND | wc -l`
 
 > [!Note]
 > Command: `journaclctl`
@@ -814,21 +809,21 @@ ___
 > - [monitoring.sh](./monitoring_scripts/monitoring.sh)
 ___
 ### **Crontab**
-- [x] Edit the `crontab` file
+- [ ] Edit the `crontab` file
+```sh
+sudo crontab -u root -e
 ```
 
-```
-> -> `sudo crontab -u root -e`
-- [x] Configure a script to execute every 10 minutes:
+- [ ] Configure a script to execute every 10 minutes:
+```sh
+*/10 * * * * sh /usr/local/bin/monitoring.sh
 ```
 
-```
-> -> `*/10 * * * * sh /usr/local/bin/monitoring.sh`
 - [ ] Create `sleep.sh` script to delay the monitoring dump, syncing it with the login time by the minute:
 > - [sleep.sh](./monitoring_scripts/sleep.sh)
-- [x] To make it be precise to the minute edit `crontab` to run `sleep.sh` script to delay the monitoring dump
-```
-`*/10 * * * * sh /usr/local/bin/sleep.sh; sh /usr/local/bin/monitoring.sh`
+- [ ] To make it be precise to the minute edit `crontab` to run `sleep.sh` script to delay the monitoring dump
+```sh
+*/10 * * * * sh /usr/local/bin/sleep.sh; sh /usr/local/bin/monitoring.sh
 ```
 
 > [!Note]
@@ -844,10 +839,9 @@ ___
 
 ### Run Script every 10 minutes since boot
 - [ ] To test the script execute the script as `su`
+```sh
+sudo /usr/local/bin/monitoring.sh
 ```
-
-```
-> => `sudo /usr/local/bin/monitoring.sh`
 
 ___
 ## Bonus Services
