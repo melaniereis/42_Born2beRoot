@@ -423,8 +423,8 @@ ___
 - [x] Open `ssh_config` with vim:
 > => `vim /etc/ssh/ssh_config`
 
-> [!Note] `ssh_config`
-> **SSH** system-wide configuration file;
+> [!Note] 
+> `ssh_config` – **SSH** system-wide configuration file;
 > - [ssh\_config(5): OpenSSH SSH client config files - Linux man page](https://linux.die.net/man/5/ssh_config)
 
 - [x] Set Port to `Port 4242`;
@@ -460,18 +460,19 @@ ___
 - [x] Check system sockets:
 > => `ss -tunlp`
 
-> [!Important] `ss` [[flags]]
-> - `-t` or `--tcp`: display [[TCP]] connections;
-> - `-u` or `--udp`: display [[UDP]] connections;
+> [!Important]
+> `ss`'s **flags**
+> - `-t` or `--tcp`: display **TCP** connections;
+> - `-u` or `--udp`: display **UDP** connections;
 > - `-n` or `--numeric`: Do not try to resolve service names into human-readable form. Show exact numeric values;
 > - `-l` or `--listening`: Display only listening sockets;
 > - [NetworkConfiguration - Debian Wiki](https://wiki.debian.org/NetworkConfiguration)
 
-- [x] Check System's Network Interfaces
- - `vim /etc/network/interfaces`
-- [x] Get ip address:
+- [x] Get `ip` address:
 - `ip --color addr`
-- [x] Editing it by setting `# The primary network interface` to:
+- [x] Get System's Network Interfaces
+ - `vim /etc/network/interfaces`
+- [x] Editing it by setting `# The primary network interface` from `dhcp` to `static`:
 ```
 iface enp0s inet static
 	address xxx.x.x.x/xx
@@ -479,22 +480,14 @@ iface enp0s inet static
 	netmask xxx.xxx.x.x
 	dns
 ```
-
-```
-
-iface enp0s inet static
-	address 10.0.2.0/24
-	gateway 10.0.2.255
-```
-
 ___
-### Installing [[git]]
-- [x] To install [[git]] run:
+### Installing **git**
+- [x] To install **git** run:
 ```sh
 apt install git
 ```
 
-> [!N]
+> [!Note]
 > [networking - UFW/IPTables: how to securely allow authenticated git access with github - Server Fault](https://serverfault.com/questions/370743/ufw-iptables-how-to-securely-allow-authenticated-git-access-with-github)
 
 ### Installing & Configuring [[UFW]] 🔥🧱
