@@ -977,22 +977,45 @@ ___
 ### Configuring **MariaDB**
 
 - [x] Enter **MariaDB**:
-> => `sudo mariadb`
+```sh
+sudo mariadb
+```
+
 - [x] Create a database for **WordPress**:
-> `MariaDB [(none)]> CREATE DATABASE wp_database;`
->  /== **wp_database**
+```sql
+MariaDB [(none)]> CREATE DATABASE wp_database;
+```
+
 - [x] Check if DB was successfully created:
-> => `MariaDB [(none)]> SHOW DATABASES;`
+```sql
+MariaDB [(none)]> SHOW DATABASES;
+```
+
 - [x] Create a user for the database:
-> => `MariaDB [(none)]> CREATE USER 'passunca'@'localhost' IDENTIFIED BY '424242';`
+```sql
+MariaDB [(none)]> CREATE USER 'passunca'@'localhost' IDENTIFIED BY '424242';
+```
+
 - [x] Bind the new user to the new DB to grant him permissions to work:
-> => `MariaDB [(none)]> GRANT ALL PRIVILEGES ON wp_database.* TO 'passunca'@'localhost';`
+```sql
+MariaDB [(none)]> GRANT ALL PRIVILEGES ON wp_database.* TO 'passunca'@'localhost';
+```
+
 - [x] Update Privileges for changes to take place:
-> => `MariaDB [(none)]> FLUSH PRIVILEGES`
+```sql
+MariaDB [(none)]> FLUSH PRIVILEGES
+```
+
 - [x] List all present users of **MariaDB**:
-> => `SELECT User FROM mysql.user;`
+```sh
+SELECT User FROM mysql.user;
+```
+
 - [x] When done exit **MariaDB**
-> => `MariaDB [(none)]> exit`
+```sql
+MariaDB [(none)]> exit
+```
+
 
 > [!Note] 
 > Useful links on **MySQL** & **MariaDB**
@@ -1002,30 +1025,57 @@ ___
 ____
 ### Installing [[PHP]]
 - [x] Get [[php-cgi]] and [[php-mysql]]:
-> `sudo apt install php-cgi php-mysql`
+```sh
+sudo apt install php-cgi php-mysql
+```
+
 - [x] Check if [[PHP]] installed successfully:
-> `dpkg -l | grep php`
+```sh
+dpkg -l | grep php
+```
+
 
 ___
 ### Configuring [[WordPress]]
 - [x] Get into **/var/www/html** directory:
-> `cd /var/www/html`
+```sh
+cd /var/www/html
+```
+
 - [x] Copy & Rename **wp-config-sample.php**:
-> `cp wp-config-sample.php wp-config.php`
+```sh
+cp wp-config-sample.php wp-config.php
+```
+
 - [x] Open **wp-config.php** for editing:
-> `vim wp-config.php`
+```sh
+vim wp-config.php
+```
+
 - [x] Modify the following values:
 > => Set `database_name_here` to `wp_databse`;
 > => Set `username_here` to `passunca`;
 > => Set `password_here` to `Zedro42beDB`;
 - [x] Enable [[lighttpd]]'s [[fastcgi]] to improve the performance and speed of web apps on the server;
-> `sudo lighty-enable-mod fastcgi`
+```sh
+sudo lighty-enable-mod fastcgi
+```
+
 - [x] Enable [[lighttpd]]'s [[fastcgi-php]] to improve the performance and speed of [[PHP]]-based web applications on the server;
-> `sudo lighty-enable-mod fastcgi-php`
+```sh
+sudo lighty-enable-mod fastcgi-php
+```
+
 - [x] Reload [[lighttpd]] to apply changes:
-> `sudo service lighttpd force-reload`
+```sh
+sudo service lighttpd force-reload
+```
+
 - [x] Get the VMs IP address:
-> `hostname -I`
+```sh
+hostname -I
+```
+
 - [x] Open the browser and type your address:
 > `<vm_ip_address>`
 - [x] Input the requested information to setup and install [[WordPress]]:
