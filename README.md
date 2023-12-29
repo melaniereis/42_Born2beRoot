@@ -175,6 +175,7 @@ ___
 >
 > `SCSI1 (0,0,0) (sda) - 33.1 GB ATA VBOX HARDDISK`
 - [x] Confirm the creation of a new empty partition;
+___
 #### Create Primary Partition
 - [x] Select `FREE SPACE`;
 - [x] Create a new partition;
@@ -187,6 +188,8 @@ ___
 - [x] Set location for the new partition to `Beginning`;
 - [x] Set Mount point: `/boot`;
 - [x] Select `Done setting up the partition`;
+
+___
 #### Create Logical Partition
 - [x] Select `FREE SPACE` again;
 - [x] Create a new partition;
@@ -198,6 +201,8 @@ ___
 - [x] Set partition type to `Logical`;
 - [x] Set Mount point to: `Do not mount it`;
 - [x] Select `Done setting up the partition`;
+
+___
 #### Encrypting Volumes
 - [x] Click `Configure encrypted volumes`;
 - [x] Accept confirmation message;
@@ -212,12 +217,16 @@ ___
 > `user` Password
 > 
 > `Zedro42beCrypt`
+
+___
 #### Configure Logical Volume Manager
 - [x] Click `Configure Logical Volume Manager`;
 - [x] Accept confirmation message;
 - [x] Click `Create volume group`;
 - [x] Set the name to `LVMGroup`;
 - [x] Select partition to store the group: `/dev/mapper/sda5_crypt`;
+
+___
 ##### Create Logical Partitions
 - [x] Select `Create Logical Volume`;
 - [x] Select group: `LVMGroup`;
@@ -276,6 +285,8 @@ ___
 >
 > `4294967296 B`
 - [x] Click `Finish`to end the configuration of the logical volumes;
+___
+
 ##### Setting Mount Points
 - [x] Select partition #1, `home`;
 - [x] Set `Use as` to `Ext4`;
@@ -322,7 +333,7 @@ ___
 - [x] Select `Continue`;
 
 > [!IMPORTANT]
-> Research [[Ext4]]
+> Research **Ext4**
 ___
 ## Virtual Machine Setup ⚙️
 ### Login into the system
