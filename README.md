@@ -1057,17 +1057,17 @@ vim wp-config.php
 > => Set `username_here` to `passunca`;
 >
 > => Set `password_here` to `Zedro42beDB`;
-- [x] Enable [[lighttpd]]'s [[fastcgi]] to improve the performance and speed of web apps on the server;
+- [x] Enable **lighttpd**'s **fastcgi** to improve the performance and speed of web apps on the server;
 ```sh
 sudo lighty-enable-mod fastcgi
 ```
 
-- [x] Enable [[lighttpd]]'s [[fastcgi-php]] to improve the performance and speed of [[PHP]]-based web applications on the server;
+- [x] Enable **lighttpd**'s **fastcgi-php** to improve the performance and speed of **PHP**-based web applications on the server;
 ```sh
 sudo lighty-enable-mod fastcgi-php
 ```
 
-- [x] Reload [[lighttpd]] to apply changes:
+- [x] Reload **lighttpd** to apply changes:
 ```sh
 sudo service lighttpd force-reload
 ```
@@ -1079,7 +1079,7 @@ hostname -I
 
 - [x] Open the browser and type your address:
 > `<vm_ip_address>`
-- [x] Input the requested information to setup and install [[WordPress]]:
+- [x] Input the requested information to setup and install **WordPress**:
 > => Title of the Site => `passunca WP;`
 >
 > => Username => `wp-passunca`;
@@ -1093,7 +1093,7 @@ hostname -I
 - [x] To access the admin panel change the address to:
 > `<vm_ip_address>/wp-admin`
 - [ ] Customizing the page is optional
-> => Have some fun;
+> - Have some fun!
 
 ### Install & Configure [[UnrealIRCd]]
 
