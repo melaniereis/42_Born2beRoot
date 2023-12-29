@@ -124,10 +124,11 @@ ___
 - [x] Store the VM inside `/sgoinfre/` directory;
 - [x] Select total amount of RAM to reserve for the machine;
 - [x] Create a new hard drive for the VM;
-- [x] Make the hard drive a [[VDI]] archive;
+- [x] Make the hard drive a **VDI** archive;
 - [x] Make the hard drive's memory dynamically allocated;
 - [x] Allocate 30 GB to account to account for the bonus:
-> [!Important]+ VM's size in Bytes
+> [!Important] 
+> VM's size in Bytes:
 > `33079636992 B`
 - [x] Click `Create`;
 - [x] Go to `Settings` and click on `Storage`;
