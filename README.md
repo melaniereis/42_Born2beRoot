@@ -515,7 +515,7 @@ ___
 > -> `touch /etc/sudoers.d/sudo_config`
 
 > [!Note]
-> This file will store the system's [[sudo]] policy
+> This file will store the system's **sudo** policy
 
 - [x] Open `sudo_config` to setup policy
 > -> `vim /etc/sudoers.d/sudo_config`
@@ -532,20 +532,20 @@ Defaults  secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/
 ```
 
 > [!Note]
-> `passwd_tries`=> total tried for entering [[sudo]] password;
+> `passwd_tries`=> total tried for entering **sudo** password;
 >
 > `badpass_message` => Message to be printed when password is wrong;
-> `logfile` => Set custom log file for [[sudo]];
+> `logfile` => Set custom log file for **sudo**;
 >
 > `log_input, log_output` => What will be logged;
 >
 > `iolog_dir` => Path where I/O logs will be stored;
 >
-> `requiretty`=> Enables [[sudo]] invocation from a real [[TTY]] but not through methods such as [[cron]] or [[cgi-bin]];
+> `requiretty`=> Enables **sudo** invocation from a real **TTY** but not through methods such as **cron** or **cgi-bin**;
 >
-> `secure_path` => The [[PATH]] used for every command run with [[sudo]]:
+> `secure_path` => The **PATH** used for every command run with **sudo**:
 >
-> -> Used when a system admin doesn't trust [[sudo]] users to have a secure [[PATH]] environment variable;
+> -> Used when a system admin doesn't trust **sudo** users to have a secure **PATH** environment variable;
 >
 > -> Separates `root path` from `user path`;
 
@@ -553,10 +553,10 @@ Defaults  secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/
 > -> `mkdir /var/log/sudo`
 
 > [!Note]
-> This folder will store the system's [[sudo]] log
+> This folder will store the system's **sudo** log
 
 ___
-### Change [[hostname]]  (for the defense)
+### Change **hostname**  (for the defense)
 - [ ] Check current [[hostname]]:
 > `hostnamectl`
 - [ ] Change [[hostname]]:
