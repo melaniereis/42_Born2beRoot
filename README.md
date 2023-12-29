@@ -446,7 +446,7 @@ ___
 ```sh
 hostname -I
 ```
-- [ ] Close the VM and go to `Settings;
+- [ ] Close the VM and go to `Settings`;
 - [ ] Click on `Network`, then `Advanced`; 
 - [ ] Change `Attached to:` from `NAT` to `Bridged Adapter`;
 - [ ] Click `OK`;
@@ -455,18 +455,10 @@ hostname -I
 ```sh
 ssh passunca@10.11.246.116 -p 4242
 ```
-
-
-> [!Important] 
-> To Test the **SSH** connection:
-> - On the **VM** side:
->
-> => `hostname -I`
-> - [ ] Connect host side (terminal)
-> => `ssh passunca@10.11.246.116 -p 4242`
-> - [ ] To close the connection:
-> => `exit`
-
+- [ ] To close the connection:
+```sh
+exit
+```
 ___
 ### Close Unnecessary Connections
 
