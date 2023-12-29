@@ -1081,8 +1081,11 @@ hostname -I
 > `<vm_ip_address>`
 - [x] Input the requested information to setup and install [[WordPress]]:
 > => Title of the Site => `passunca WP;`
+>
 > => Username => `wp-passunca`;
+>
 > => Password => `Zedro42beDB`;
+>
 > => email => `passunca@student.42porto.com`;
 - [x] Click `Install Wordpress`;
 - [x] Access the server on the browser
