@@ -1095,19 +1095,21 @@ hostname -I
 - [ ] Customizing the page is optional
 > - Have some fun!
 
-### Install & Configure **UnrealIRCd**
+___
+### Install & Configuring **UnrealIRCd**
 
 > [!Attention]
->  Do **NOT** build and run the IRCd as **root** 
+> Do **NOT** build and run the UnrealIRCd as **root** 
 > It is recommended to run `UnrealIRCd` under an account with restricted privileges;
 
+___
 ## Creating a dedicated user
 
 - [ ] Add a new user:
-> => `sudo adduser unrealircd`
+> => `sudo adduser ircd`
 
 > [!Important]+ User Credentials
-> login: `unrealircd`
+> login: `ircd`
 	> password: `Zedro42beIRC`
 
 > [!Note]
