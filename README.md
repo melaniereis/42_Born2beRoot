@@ -503,14 +503,15 @@ apt install git
 
 > [!Note]
 > Alternatively the firewall's state can be checked with
+>
 > => `sudo ufw status verbose`
 > => `sudo ufw status numbered`
 > ### Refs
 > - [UFW: Common Firewall Rules and Commands – TecAdmin](https://tecadmin.net/ufw-common-firewall-rules-and-commands/)
 
 ___
-### Configuring [[sudo]] policies and log
-- [x] Create the the following file:
+### Configuring **sudo** policies and log
+- [x] Create the following file:
 > -> `touch /etc/sudoers.d/sudo_config`
 
 > [!Note]
@@ -530,15 +531,22 @@ Defaults  requiretty
 Defaults  secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin"
 ```
 
-> [!Legend]
+> [!Note]
 > `passwd_tries`=> total tried for entering [[sudo]] password;
+>
 > `badpass_message` => Message to be printed when password is wrong;
 > `logfile` => Set custom log file for [[sudo]];
+>
 > `log_input, log_output` => What will be logged;
+>
 > `iolog_dir` => Path where I/O logs will be stored;
+>
 > `requiretty`=> Enables [[sudo]] invocation from a real [[TTY]] but not through methods such as [[cron]] or [[cgi-bin]];
+>
 > `secure_path` => The [[PATH]] used for every command run with [[sudo]]:
+>
 > -> Used when a system admin doesn't trust [[sudo]] users to have a secure [[PATH]] environment variable;
+>
 > -> Separates `root path` from `user path`;
 
 - [x] Create the following directory:
