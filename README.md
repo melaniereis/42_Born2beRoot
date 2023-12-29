@@ -665,6 +665,7 @@ ___
 
 > [!Note]
 > Command: `df`
+>
 > `df` stands for `Disk Filesystem` command; Prints a summary about disk usage;
 > - The `-m` flag prints prints result in MB;
 
