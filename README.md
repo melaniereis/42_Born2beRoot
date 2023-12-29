@@ -3,7 +3,7 @@
 
 # Born2beRoot 󰹑
 
-> an introduction to _**the wonderful world of virtualization**_. 
+> an introduction to _**the wonderful world of virtualization**_.
 
 <p>
     <img src="https://img.shields.io/badge/score-125%20%2F%20100-success?style=for-the-badge" />
@@ -19,14 +19,14 @@
 # About
 
 This project teaches how to setup a server implementing strict rules. To complete this project a **Virtual Machine** (using **VirtualBox** or **UTM**) must be build following specific instructions.
- 
+
 ___
 
 ## Constraints
 - [ ] Only minimum services must be installed;
 - [ ] X.org or any other equivalent graphics servers are forbidden;
 - [ ] Only either the latest stable version of **Debian** or **Rocky** should be used;
-- [ ] **Firewall** 
+- [ ] **Firewall**
 > - For **Debian** **AppArmor** must be running at startup;
 > - For **Rocky**, **SELinux** must be launched at startup configured in accordance with the project's requirements;
 - [ ] At least 2 encrypted partitions must be created using **LVM**;
@@ -36,7 +36,7 @@ ___
 - [ ] An **SSH** service must be running on port 4242 only;
 - [ ] For security reasons it must NOT be possible to connect using **SSH** as `root`;
 - [ ] The operating system must be configured with a **Firewall**:
-> - In the case of Debian, the **UFW** firewall leaving only port 4242 open. 
+> - In the case of Debian, the **UFW** firewall leaving only port 4242 open.
 > - In the case of Rocky, **firewalld**;
 - [ ] The firewall must be active at startup;
 - [ ] The **hostname** of the virtual machine should be your login with 42 appended;
@@ -107,7 +107,7 @@ ___
 ![Partitions Bonus IMG](IMG/partitions_bonus.jpeg)
 
 - [ ] Set up a functional **WordPress** website with the following services: **lighttpd**, **MariaDB** and **PHP**;
-- [ ] Set up a service of your choice that you think is useful (**NGINX** / **Apache2** excluded!) 
+- [ ] Set up a service of your choice that you think is useful (**NGINX** / **Apache2** excluded!)
 
 > [!Important]
 > To complete the bonus part, there is the possibility of setting up extra services. In this case, you may open more ports to suit your needs. Of course, the **UFW**/**Firewalld** rules has to be adapted accordingly.
@@ -127,8 +127,9 @@ ___
 - [x] Make the hard drive a **VDI** archive;
 - [x] Make the hard drive's memory dynamically allocated;
 - [x] Allocate 30 GB to account to account for the bonus:
-> [!Important] 
-> VM's size in Bytes:
+> [!Important]
+> **VM**'s size in Bytes:
+>
 > `33079636992 B`
 - [x] Click `Create`;
 - [x] Go to `Settings` and click on `Storage`;
@@ -145,8 +146,10 @@ ___
 - [x] Set country to `Portugal`;
 - [x] Set locales to `United States`;
 - [x] Set keyboard to `American English`;
-- [x] Set a `Host Name` for the VM: 
-> [!Important]+ hostname
+- [x] Set a `Host Name` for the VM:
+> [!Important]
+> **hostname**'s name:
+>
 > `passunca42`;
 - [x] Leave network settings blank (not required by the subject);
 - [x] Set password for `root` user;
@@ -265,7 +268,7 @@ ___
 - [x] Set `Use as` to `swap area`;
 
 > [!N] [[Swap Partition ]]
-> 
+>
 
 - [x] Select `Done setting up the partition`;
 - [x] Select partition #1, `tmp`;
@@ -302,11 +305,11 @@ ___
 - [x] Enter user and password;
 ### Installing [[sudo]] & configuring groups and users
 - [x] Switch user to `root`:
-> => `su` 
+> => `su`
 - [x] Insert `root` password;
-- [x] To install [[sudo]] run: 
+- [x] To install [[sudo]] run:
 > => `apt install sudo`;
-- [x] Reboot the machine with the following command: 
+- [x] Reboot the machine with the following command:
 > => `sudo reboot`;
 - [x] Login again with `user` and switch to `root`;
 - [x] Check [[sudo]]'s version with the command:
@@ -341,31 +344,31 @@ ___
 >  > Filters `getent` output;
 ____
 ### Installing [[SSH]]
-- [x] Update the system: 
+- [x] Update the system:
  => `sudo apt update`;
 > [!Note] Gets packages:
-> -> `bookworm`, 
+> -> `bookworm`,
 > -> `bookworm-security`,
-> -> `bookworm-updates`  
+> -> `bookworm-updates`
 
-- [x] Install [[OpenSSH]]: 
+- [x] Install [[OpenSSH]]:
 > => `sudo apt install openssh-server`;
 - [x] When asked for confirmation type `Y`;
 
 > [!Note]
-> To check the state of the system's [[SSH]] service: 
+> To check the state of the system's [[SSH]] service:
 > -> `sudo service ssh status`;
 > The service must be shown as `Active`;
 
 ___
 #### Installing [[vim]]
-- [x] Run the command: 
+- [x] Run the command:
 > => `sudo apt install vim`;
 
 ___
 #### Configuring [[SSH]]
 - [x] If not `root` switch to it with `su`;
-- [x] Open `sshd_config` with vim: 
+- [x] Open `sshd_config` with vim:
 > => `vim /etc/ssh/sshd_config`
 
 > [!Note] `sshd` – SSH server process
@@ -377,7 +380,7 @@ ___
 - [x] Set Port to `Port 4242`
 - [x] Set `PermitRootLogin no`
 - [x] Save changes and close file;
-- [x] Open `ssh_config` with vim: 
+- [x] Open `ssh_config` with vim:
 > => `vim /etc/ssh/ssh_config`
 
 > [!Note] `ssh_config`
@@ -409,19 +412,19 @@ ___
 - [ ] To close the connection:
 > => `exit`
 
-### Close Unnecessary Connections 
+### Close Unnecessary Connections
 
 - [x] Check system sockets:
 > => `ss -tunlp`
 
-> [!Important] `ss` [[flags]] 
+> [!Important] `ss` [[flags]]
 > - `-t` or `--tcp`: display [[TCP]] connections;
 > - `-u` or `--udp`: display [[UDP]] connections;
 > - `-n` or `--numeric`: Do not try to resolve service names into human-readable form. Show exact numeric values;
 > - `-l` or `--listening`: Display only listening sockets;
 > - [NetworkConfiguration - Debian Wiki](https://wiki.debian.org/NetworkConfiguration)
 
-- [x] Check System's Network Interfaces 
+- [x] Check System's Network Interfaces
  - `vim /etc/network/interfaces`
 - [x] Get ip address:
 - `ip --color addr`
@@ -449,13 +452,13 @@ apt install git
 ```
 
 > [!N]
-> [networking - UFW/IPTables: how to securely allow authenticated git access with github - Server Fault](https://serverfault.com/questions/370743/ufw-iptables-how-to-securely-allow-authenticated-git-access-with-github) 
+> [networking - UFW/IPTables: how to securely allow authenticated git access with github - Server Fault](https://serverfault.com/questions/370743/ufw-iptables-how-to-securely-allow-authenticated-git-access-with-github)
 
 ### Installing & Configuring [[UFW]] 🔥🧱
 
 - [x] Install [[UFW]] packages:
 > => `sudo apt install ufw`;
-- [x] Start [[UFW]] using the command 
+- [x] Start [[UFW]] using the command
 > => `sudo ufw enable`;
 - [x] Configure [[Firewall]] to accept connections on 4242 port
 > => `sudo ufw allow 4242`;
@@ -495,8 +498,8 @@ Defaults  secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/
 > `passwd_tries`=> total tried for entering [[sudo]] password;
 > `badpass_message` => Message to be printed when password is wrong;
 > `logfile` => Set custom log file for [[sudo]];
-> `log_input, log_output` => What will be logged; 
-> `iolog_dir` => Path where I/O logs will be stored;  
+> `log_input, log_output` => What will be logged;
+> `iolog_dir` => Path where I/O logs will be stored;
 > `requiretty`=> Enables [[sudo]] invocation from a real [[TTY]] but not through methods such as [[cron]] or [[cgi-bin]];
 > `secure_path` => The [[PATH]] used for every command run with [[sudo]]:
 > -> Used when a system admin doesn't trust [[sudo]] users to have a secure [[PATH]] environment variable;
@@ -518,7 +521,7 @@ ___
 > `sudo vim /etc/hosts`
 - [ ] Change **old_hostname** to **new_hostname**
 ```sh
-127.0.0.1 localhost  
+127.0.0.1 localhost
 127.0.0.1 new_hostname
 ```
 - [ ] Reboot and check for change:
@@ -548,7 +551,7 @@ ___
 > [!Note]
 > Provides common functions for password quality checking and scoring based on their apparent randomness; this library also provides a function for generating random passwords with good pronounceability;
 > - [Debian -- Details of package libpam-pwquality in buster](https://packages.debian.org/buster/libpam-pwquality)
-> 
+>
 
 - [x] Configure [[libpam-pwquality]]:
 > -> `sudo vim /etc/pam.d/common-password`
@@ -589,7 +592,7 @@ ___
 > -> `free --mega | awk '$1 == "Mem:" {print $3}'`
 - [x] Get total amount of memory in the system:
 > -> `free --mega | awk '$1 == "Mem:" {print $2}'`
-- [x] 
+- [x]
 > `free --mega | awk '$1 == "Mem:" {printf("(%.2f%%)\n", $3/$2*100)}'
 
 > [!Command: awk]
@@ -615,7 +618,7 @@ ___
 
 > [!Important]+ Command [[awk]]
 > - `awk '{memory_use += $3} END {print memory_use}'` gets the sum of the values on the 3rd column of each line and prints the final result;
-> 
+>
 
 ___
 ### CPU Information
@@ -648,12 +651,12 @@ ___
 > -> `if [ $(lsblk | grep "lvm" | wc -l) -gt 0 ]; then echo yes; else echo no; fi`
 
 > [!Important]
-> - `$(...)` is a command substitution; 
+> - `$(...)` is a command substitution;
 > Executes the command inside the parentheses and replaces it with it's output;
 > - In bash the `-gt` flag is the `Greater Than` [[Comparison Operators|Comparison Operator]] used for arithmetic operations in bash scripting;
 
 > [!Command: lsblk]
-> The [[lsblk]] command displays information about all available block devices (Hard Drives, SSDs, memories, etc) 
+> The [[lsblk]] command displays information about all available block devices (Hard Drives, SSDs, memories, etc)
 
 ___
 ### [[TCP]] connection
@@ -680,8 +683,8 @@ ___
 
 > [!Command: hostname]
 > To change hostname edit
-> -> `vim /etc/hosts` 
-> and 
+> -> `vim /etc/hosts`
+> and
 > -> `vim /etc/hostname`
 >
 
@@ -754,7 +757,7 @@ ___
 ### Setup [[lighttpd]]
 - [x] Install [[lighttpd]]  packages:
 > => `sudo apt install lighttpd`
-- [x] Check if [[lighttpd]] was successfully installed: 
+- [x] Check if [[lighttpd]] was successfully installed:
 > => `dpkg -l | grep lighttpd`
 - [x] Open a connection on `port 80` by running:
 > => `sudo ufw allow 80`
@@ -762,7 +765,7 @@ ___
 > => `sudo ufw status`
 
 ( THIS MAY NEED TO BE REMOVED )
-- [ ] Got back to [[VirtualBox]] GUI and: 
+- [ ] Got back to [[VirtualBox]] GUI and:
 > `Settings`->`Network`->`Advanced`->`Port-forwarding`->`Replicate capture`
 - [ ] Add Rule that includes `port 80`;
 
@@ -771,9 +774,9 @@ ___
 - [x] Get [[wget]] and [[zip]] packages:
 > => `sudo apt install wget zip`
 - [x] Go to the **/var/www/** directory:
-> => `cd /var/www/` 
+> => `cd /var/www/`
 
-> [!Important] 
+> [!Important]
 > => [server - Why is /var/www a recommended location to host your web app? - Ask Ubuntu](https://askubuntu.com/questions/877261/why-is-var-www-a-recommended-location-to-host-your-web-app)
 
 - [x] Get [[WordPress]] packages:
@@ -804,7 +807,7 @@ ____
 > - Enables setting a password for root accounts;
 > - Enables removal of root accounts accessible from outside of the host;
 > - Enables removal of anonymous-user accounts;
-> - 
+> -
 >
 > **Refs**
 > - [MySQL :: MySQL 8.0 Reference Manual :: 4.4.2 mysql\_secure\_installation — Improve MySQL Installation Security](https://dev.mysql.com/doc/refman/8.0/en/mysql-secure-installation.html)
@@ -820,7 +823,7 @@ Sett `mysql_secure_installation` options as follows:
 - [x] **Disallow root login remotely? → Y**
 > Ensures that a bad actor cannot guess at the root password from the network
 - [x] **Remove test database and access to it? → Y**
-> By default [[MariaDB]] comes with a `test` DB that anyone can access, remove it; 
+> By default [[MariaDB]] comes with a `test` DB that anyone can access, remove it;
 - [x] **Reload privilege tables now? → Y**
 > Choose `Y` to reload permission tables so that the security settings take effect immediately
 
@@ -830,7 +833,7 @@ ___
 - [x] Enter [[MariaDB]]:
 > => `sudo mariadb`
 - [x] Create a database for [[WordPress]]:
-> `MariaDB [(none)]> CREATE DATABASE wp_database;` 
+> `MariaDB [(none)]> CREATE DATABASE wp_database;`
 >  /== [[wp_database]]
 - [x] Check if DB was successfully created:
 > => `MariaDB [(none)]> SHOW DATABASES;`
@@ -845,11 +848,11 @@ ___
 - [x] When done exit [[MariaDB]]
 > => `MariaDB [(none)]> exit`
 
-> [!N] Useful links on [[MySQL]] & [[MariaDB]] 
+> [!N] Useful links on [[MySQL]] & [[MariaDB]]
 > - [What is MySQL? Everything You Need to Know | Talend](https://www.talend.com/resources/what-is-mysql/)
 > - [MariaDB List Users](https://linuxhint.com/mariadb-list-users/)
 ____
-### Installing [[PHP]] 
+### Installing [[PHP]]
 - [x] Get [[php-cgi]] and [[php-mysql]]:
 > `sudo apt install php-cgi php-mysql`
 - [x] Check if [[PHP]] installed successfully:
@@ -881,7 +884,7 @@ ___
 > => Title of the Site => `passunca WP;`
 > => Username => `wp-passunca`;
 > => Password => `Zedro42beDB`;
-> => email => `passunca@student.42porto.com`; 
+> => email => `passunca@student.42porto.com`;
 - [x] Click `Install Wordpress`;
 - [x] Access the server on the browser
 > `<vm_ip_address>`
@@ -893,7 +896,7 @@ ___
 ### Install & Configure [[UnrealIRCd]]
 
 ___
-### Bonus Services 
+### Bonus Services
 
 - [[Jitsi]] ( forbidden, uses [[NGINX]] )
 - [[UnrealIRCd]]
@@ -916,7 +919,7 @@ ___
 ### SSH
 - Restart [[SSH]]
 > `systemctl restart ssh`
-- Check [[SSH]] status 
+- Check [[SSH]] status
 > `service sshd status`
 
 ___
@@ -928,7 +931,7 @@ ___
 > `nproc`
 
 
-#### Delete [[users]] 
+#### Delete [[users]]
 
 `sudo deluser <username>`
 
@@ -937,7 +940,7 @@ ___
 `sudo hostnamectl set-hostname <name>`
 [hostnamectl(1) - Linux manual page](https://man7.org/linux/man-pages/man1/hostnamectl.1.html)
 
-##### More 
+##### More
 ###### File System Docs
 - [command line - Differences between /bin, /sbin, /usr/bin, /usr/sbin, /usr/local/bin, /usr/local/sbin - Ask Ubuntu](https://askubuntu.com/questions/308045/differences-between-bin-sbin-usr-bin-usr-sbin-usr-local-bin-usr-local)
 - [/var](https://tldp.org/LDP/Linux-Filesystem-Hierarchy/html/var.html)
@@ -946,11 +949,11 @@ ___
 ___
 ### Bonus Service
 
-- Send output of [[crontab]] to email 
+- Send output of [[crontab]] to email
 
 ___
 # Repo Refs
-- [Born2beroot. 42 school project | by Baigalmaa Baatar | Medium](https://baigal.medium.com/born2beroot-e6e26dfb50ac) 
+- [Born2beroot. 42 school project | by Baigalmaa Baatar | Medium](https://baigal.medium.com/born2beroot-e6e26dfb50ac)
 - [GitHub - ayoub0x1/born2beroot: Born2beroot (42cursus). This project aims to introduce you to the wonderful world of virtualization.](https://github.com/ayoub0x1/born2beroot)
 - [README\_EN.md](https://github.com/gemartin99/Born2beroot-Tutorial/blob/main/README_EN.md)
 rn2b
