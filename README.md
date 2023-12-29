@@ -435,13 +435,9 @@ ___
 ___
 ### Connecting via **SSH**
 - [x] Close the VM and go to `Settings;
-- [x] Click ion `Network`, then `Advanced`, then `Port forwarding`;
-- [x] Click on the icon (top right corner) to add a new rule;
-- [x] Set the port for `host` and `client` to 4242;
-> **IP**s are not required!
-- [x] Back in the VM restart **SSH** server
-> => `sudo systemctl restart ssh`
-- [ ] Check **SSH** status:
+- [x] Click ion `Network`, then `Advanced`; 
+- [x] Change `Attached to:` from `NAT` to `Bridged Adapter`;
+- [ ] Re-open the **VM** and check **SSH** status:
 > => `sudo service sshd status`
 
 > [!Important] 
@@ -856,7 +852,7 @@ ___
 - [x] Get `tmux`:
 > -> `apt install tmux`
 ___
-### Setup `lighttpd` server for **Wordpress**
+### Setup `lighttpd` to serve **Wordpress**
 - [x] Install `lighttpd`  packages:
 > => `sudo apt install lighttpd`
 - [x] Check if `lighttpd` was successfully installed:
@@ -865,11 +861,6 @@ ___
 > => `sudo ufw allow 80`
 - [x] Check available port status
 > => `sudo ufw status`
-
-( THIS MAY NEED TO BE REMOVED )
-- [ ] Got back to **VirtualBox** GUI and:
-> `Settings`->`Network`->`Advanced`->`Port-forwarding`->`Replicate capture`
-- [ ] Add Rule that includes `port 80`;
 
 ___
 ### Installing **WordPress**
