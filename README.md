@@ -1136,7 +1136,7 @@ sudo adduser unrealircd bonus
 su ircd
 ```
 
-## Installing [[UnrealIRCd]]
+## Installing **UnrealIRCd**
 
 - [ ] As the new user's go to the **home** directory:
 ```sh
@@ -1163,7 +1163,7 @@ tar xzvf unrealircd-6.1.X.tar.gz
 ```
 
 - [ ] Press Enter to accept default answers
-- [ ] Compile [[UnrealIRCd]]:
+- [ ] Compile **UnrealIRCd**:
 ```sh
 make
 ```
@@ -1174,7 +1174,7 @@ make install
 ```
 
 
-## Configuring [[UnrealIRCd]]
+## Configuring **UnrealIRCd**
 
 - [ ] Change to the installation directory:
 ```sh
