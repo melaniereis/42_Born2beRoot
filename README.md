@@ -372,10 +372,6 @@ ___
 - [x] Include `passunca` on both `sudo` and `user42` groups:
 > => `sudo adduser <user> <groupname>`
 
-> [!N] Current GID
-> `user42` (GID 1002)
-> [[GID]] = Group ID;
-
 >[!Important] 
 > To check user groups and their users either:
 >
@@ -384,15 +380,16 @@ ___
 > => `getent group <groupname>`;
 >  > Filters `getent` output;
 ____
-### Installing [[SSH]]
+### Installing **SSH**
 - [x] Update the system:
  => `sudo apt update`;
-> [!Note] Gets packages:
+> [!Note] 
+> Gets packages:
 > -> `bookworm`,
 > -> `bookworm-security`,
 > -> `bookworm-updates`
 
-- [x] Install [[OpenSSH]]:
+- [x] Install **OpenSSH**:
 > => `sudo apt install openssh-server`;
 - [x] When asked for confirmation type `Y`;
 
