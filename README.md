@@ -361,9 +361,11 @@ ___
 - [x] Create a new user;
 > => `sudo adduser <login>`
 
-> [!Important]+ User Credentials
+> [!Important]
+> User Credentials
+> 
 > login: `zedro`
-	> password: `Zedro42beUser`
+> password: `Zedro42beUser`
 
 - [x] Create a new group `user42`:
 > => `sudo addgroup user42`;
@@ -374,7 +376,9 @@ ___
 > `user42` (GID 1002)
 > [[GID]] = Group ID;
 
->[!Important] To check user groups and their users either:
+>[!Important] 
+> To check user groups and their users either:
+>
 > Switch user to `root`:
 > => `getent group`;
 > => `getent group <groupname>`;
