@@ -427,16 +427,17 @@ ___
 > `ssh_config` – **SSH** system-wide configuration file;
 > - [ssh\_config(5): OpenSSH SSH client config files - Linux man page](https://linux.die.net/man/5/ssh_config)
 
-- [x] Set Port to `Port 4242`;
-- [x] Restart and update the **SSH** service:
+- [ ] Set Port to `Port 4242`;
+- [ ] Restart and update the **SSH** service:
 > => `sudo service ssh restart`
-- [x] Check service's state with:
+- [ ] Check service's state with:
 > => `sudo service ssh status`
 ___
 ### Connecting via **SSH**
-- [x] Close the VM and go to `Settings;
-- [x] Click ion `Network`, then `Advanced`; 
-- [x] Change `Attached to:` from `NAT` to `Bridged Adapter`;
+- [ ] Close the VM and go to `Settings;
+- [ ] Click on `Network`, then `Advanced`; 
+- [ ] Change `Attached to:` from `NAT` to `Bridged Adapter`;
+- [ ] Click `OK`;
 - [ ] Re-open the **VM** and check **SSH** status:
 > => `sudo service sshd status`
 
@@ -453,7 +454,7 @@ ___
 ___
 ### Close Unnecessary Connections
 
-- [x] Check system sockets:
+- [ ] Check system sockets:
 > => `ss -tunlp`
 
 > [!Important]
