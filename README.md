@@ -856,7 +856,7 @@ ___
 - [x] Get `tmux`:
 > -> `apt install tmux`
 ___
-### Setup `lighttpd`
+### Setup `lighttpd` server for **Wordpress**
 - [x] Install `lighttpd`  packages:
 > => `sudo apt install lighttpd`
 - [x] Check if `lighttpd` was successfully installed:
