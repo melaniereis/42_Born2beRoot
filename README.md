@@ -1095,7 +1095,71 @@ hostname -I
 - [ ] Customizing the page is optional
 > - Have some fun!
 
-### Install & Configure [[UnrealIRCd]]
+### Install & Configure **UnrealIRCd**
+
+> [!Attention]
+>  Do **NOT** build and run the IRCd as **root** 
+> It is recommended to run `UnrealIRCd` under an account with restricted privileges;
+
+## Creating a dedicated user
+
+- [ ] Add a new user:
+> => `sudo adduser unrealircd`
+
+> [!Important]+ User Credentials
+> login: `unrealircd`
+	> password: `Zedro42beIRC`
+
+> [!Note]
+> This creates a user unrealircd with a home directory of _/home/unrealircd_. Later on UnrealIRCd will be installed in _/home/unrealircd/unrealircd_.
+
+- [ ] Create a new group `bonus`:
+> => `sudo addgroup bonus`
+- [ ] Add user to group:
+> => `sudo adduser unrealircd bonus`
+
+> [!Important]
+> To change the logged in user:
+> => `su - ircd`
+
+## Installing [[UnrealIRCd]]
+
+- [ ] As the new user's go to the **home** directory:
+> => `cd ~`
+- [ ] Get the source (.tar.gz):
+> => `wget --trust-server-names https://www.unrealircd.org/downloads/unrealircd-latest.tar.gz`
+- [ ] Extract the source from archive:
+> => `tar xzvf unrealircd-6.1.X.tar.gz`
+ 
+> [!Note]
+> Change the **X** in the version name to the version you downloaded
+
+- [ ] Run the **./Config** script which will ask a couple of questions. 
+> => `./Config` 
+- [ ] Press Enter to accept default answers
+- [ ] Compile [[UnrealIRCd]]:
+> => `make`
+- [ ] and then run:
+> => `make install`
+
+## Configuring [[UnrealIRCd]]
+
+- [ ] Change to the installation directory:
+> => `cd ~/unrealircd`
+- [ ] Copy **conf/examples/example.conf** into the **/conf** directory and rename it to **unreadlird.conf**
+> => `cp conf/examples/example.conf conf/unrealircd.conf`
+- [ ] Open the file:
+> => `vim conf/unrealircd.conf` 
+- [ ] Rice the shit out of that file
+> 🍚 ( Change with actual config)
+
+- [ ] Boot [[UnrealIRCd]]:
+>  => `./unrealircd start`
+
+- [ ] Open port `6667`;
+
+/server add irc.passunca.org 10.11.246.116/6667 -notls
+
 
 ___
 ### Get Signature
@@ -1113,6 +1177,13 @@ ___
 ___
 ___
 ___
+
+
+
+
+
+
+
 
 
 ### Bonus Services
