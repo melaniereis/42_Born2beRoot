@@ -361,7 +361,7 @@ sudo -V
 ```
 
 > [!Note]
-> This command displays the currently installed version of [[sudo]] (and other extra info like which plugins are installed);
+> This command displays the currently installed version of **sudo** (and other extra info like which plugins are installed);
 
 > [!Important]
 > If the output is too large it can be redirected to a file with the following command: `sudo -V > file.txt`. Additionally the output could be piped `| more` to be conveniently displayed;
