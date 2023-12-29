@@ -490,13 +490,13 @@ apt install git
 > [!Note]
 > [networking - UFW/IPTables: how to securely allow authenticated git access with github - Server Fault](https://serverfault.com/questions/370743/ufw-iptables-how-to-securely-allow-authenticated-git-access-with-github)
 
-### Installing & Configuring [[UFW]] 🔥🧱
+### Installing & Configuring **UFW** 🔥🧱
 
-- [x] Install [[UFW]] packages:
+- [x] Install **UFW** packages:
 > => `sudo apt install ufw`;
-- [x] Start [[UFW]] using the command
+- [x] Start **UFW** using the command
 > => `sudo ufw enable`;
-- [x] Configure [[Firewall]] to accept connections on 4242 port
+- [x] Configure **Firewall** to accept connections on 4242 port
 > => `sudo ufw allow 4242`;
 - [x] Check the current state of the firewall
 > => `sudo ufw status`;
