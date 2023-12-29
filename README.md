@@ -700,7 +700,7 @@ ___
 ___
 ### Last Reboot
 - [x] Get Date and Time of last reboot:
-> -> `who -b | awk '$1 == "system" {print $3 " " $4}'
+> -> `who -b | awk '$1 == "system" {print $3 " " $4}'`
 
 > [!Note] 
 > Command: who
@@ -721,7 +721,7 @@ ___
 > The **lsblk** command displays information about all available block devices (Hard Drives, SSDs, memories, etc)
 
 ___
-### [[TCP]] connection
+### **TCP** connection
 - [x] Check for the number of established **TCP** connections:
 > -> `ss -ta | grep ESTAB | wc -l`
 
