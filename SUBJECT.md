@@ -1,5 +1,15 @@
 # Born2beRoot Project Rules
 
+<!-- mtoc-start -->
+
+* [Constraints](#constraints)
+* [Password Policy](#password-policy)
+* [Configuration Setup](#configuration-setup)
+* [Monitoring Script](#monitoring-script)
+* [Bonus](#bonus)
+
+<!-- mtoc-end -->
+
 ## Constraints
 - [ ] Only minimum services must be installed;
 - [ ] X.org or any other equivalent graphics servers are forbidden;
