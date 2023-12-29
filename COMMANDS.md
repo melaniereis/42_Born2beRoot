@@ -196,6 +196,8 @@ sudo vim /etc/sudoers.d/sudo_config
 - Get `sudo` log file:
 ```sh
 sudo vim /var/log/sudo/sudo_config
+# and number of commands invoked by `sudo`
+journalctl _COMM=sudo | grep COMMAND | wc -l
 ```
 
 - Get the system's journal

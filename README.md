@@ -726,8 +726,8 @@ ___
 > -> `ss -ta | grep ESTAB | wc -l`
 
 > [!Note]
-> Command: ss
-> The **ss** command (replacing the now obsolete **netstat**) is a utility to investigate sockets; It can display more **TCP** and state information than other tools.
+> Command: `ss`
+> The `ss` command (replacing the now obsolete **netstat**) is a utility to investigate sockets; It can display more **TCP** and state information than other tools.
 
 ___
 ### Number of users
@@ -736,7 +736,7 @@ ___
 
 > [!Note]
 > Command: users
-> The command **users** displays the number of users define for the system;
+> The command `users` displays the number of users define for the system;
 
 ___
 ### **IP Address** & **MAC**
@@ -778,7 +778,7 @@ ___
 - [x] Configure a script to execute every 10 minutes:
 > -> `*/10 * * * * sh /usr/local/bin/monitoring.sh`
 - [x] To make it be precise to the minute edit `crontab` to run `sleep.sh` script to delay the monitoring dump
-> -> `*/10 * * * * sh /usr/local/bin/sleep.sh; sh /usr/local/bin/monitoring.sh``
+> -> `*/10 * * * * sh /usr/local/bin/sleep.sh; sh /usr/local/bin/monitoring.sh`
 
 > [!Note]
 > Command: `crontab`
