@@ -99,17 +99,12 @@ An example of the script's output:
 
 ![Monitoring Script IMG](IMG/monitoring.jpeg)
 ___
-## Useful Commands
 
-To check on some of the above listen requirements the following commands can be used;
-[[RAW/3ee1622b8598bda69616e9a7f62696ce_MD5.jpeg|]]
-![](attachment/1dd52eb5ca32788987bf3ecaee4f93ea.jpeg)
-___
 ## Bonus
 
 - [ ] Set up partitions as to match a similar structure to the one below:
-[[RAW/7dd3691bcf04f7a49d8cf6f0bcf6a38e_MD5.jpeg|]]
-![](attachment/9922622a979cf83f4eeccad9cdd9956f.jpeg)
+
+![Partitions Bonus IMG](IMG/partitions_bonus.jpeg)
 
 - [ ] Set up a functional [[WordPress]] website with the following services: [[lighttpd]], [[MariaDB]] and [[PHP]];
 - [ ] Set up a service of your choice that you think is useful ([[NGINX]] / [[Apache2]] excluded!) 
