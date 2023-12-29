@@ -751,6 +751,7 @@ if [ $(lsblk | grep "lvm" | wc -l) -gt 0 ]; then echo yes; else echo no; fi
 
 > [!Note]
 > Command: `lsblk`
+>
 > The `lsblk` command displays information about all available block devices (Hard Drives, SSDs, memories, etc)
 
 ___
@@ -763,6 +764,7 @@ ss -ta | grep ESTAB | wc -l
 
 > [!Note]
 > Command: `ss`
+>
 > The `ss` command (replacing the now obsolete **netstat**) is a utility to investigate sockets; It can display more **TCP** and state information than other tools.
 
 ___
@@ -774,6 +776,7 @@ users | wc -w
 
 > [!Note]
 > Command: `users`
+>
 > The command `users` displays the number of users define for the system;
 
 ___
@@ -789,6 +792,7 @@ ip link | grep "link/ether" | awk '{print $2}'
 
 > [!Note]
 > Command: `hostname`
+> 
 > To change `hostname` edit
 > -> `vim /etc/hosts`
 > and
@@ -809,6 +813,7 @@ journalctl _COMM=sudo | grep COMMAND | wc -l
 
 > [!Note]
 > Command: `journaclctl`
+> 
 > The command `journaclctl` collects and manages system logs;
 > - `_COMM=sudo` filters out everything but `sudo` executions;
 ___
@@ -859,7 +864,7 @@ ___
 > -> `apt curl
 - [x] get `wget`:
 > -> `apt wget`
-- [x] Get `zsh`:
+-ga [x] Get `zsh`:
 > -> `apt install zsh`
 - [x] Get `tmux`:
 > -> `apt install tmux`
