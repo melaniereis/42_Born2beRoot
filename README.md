@@ -717,15 +717,16 @@ ___
 > - In bash the `-gt` flag is the `Greater Than` **Comparison Operator** used for arithmetic operations in bash scripting;
 
 > [!Note]
-> Command: lsblk
-> The **lsblk** command displays information about all available block devices (Hard Drives, SSDs, memories, etc)
+> Command: `lsblk`
+> The `lsblk` command displays information about all available block devices (Hard Drives, SSDs, memories, etc)
 
 ___
 ### **TCP** connection
 - [x] Check for the number of established **TCP** connections:
 > -> `ss -ta | grep ESTAB | wc -l`
 
-> [!Command: ss]
+> [!Note]
+> Command: ss
 > The **ss** command (replacing the now obsolete **netstat**) is a utility to investigate sockets; It can display more **TCP** and state information than other tools.
 
 ___
