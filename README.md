@@ -18,6 +18,7 @@
 # About
 
 This project teaches how to setup a server implementing strict rules. 
+
 To complete this project a **Virtual Machine** (using **VirtualBox** or **UTM**) must be built following specific instructions.
 
 ___
