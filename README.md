@@ -11,12 +11,14 @@
     <img src="https://img.shields.io/github/last-commit/PedroZappa/Born2beRoot?style=for-the-badge" />
 </p>
 
+</div>
 
 ![VM MEME](IMG/VM_MEME.jpeg)
 
 # About
 
-This project teaches how to setup a server implementing strict rules. To complete this project a **Virtual Machine** (using **VirtualBox** or **UTM**) must be build following specific instructions.
+This project teaches how to setup a server implementing strict rules. 
+To complete this project a **Virtual Machine** (using **VirtualBox** or **UTM**) must be built following specific instructions.
 
 ___
 
@@ -33,4 +35,3 @@ This work is published under the terms of <a href="https://github.com/PedroZappa
 
 <p align="right">(<a href="#readme-top">get to top</a>)</p>
 
-</div>
