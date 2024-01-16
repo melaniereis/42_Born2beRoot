@@ -1,15 +1,5 @@
 # Commands Glossary
 
-<!-- mtoc-start -->
-
-* [System Commands](#system-commands)
-* [`cron` Commands](#cron-commands)
-* [`ufw` Commands](#ufw-commands)
-* [`sudo` Commands](#sudo-commands)
-* [`ssh` Commands](#ssh-commands)
-
-<!-- mtoc-end -->
-
 ## System Commands
 
 - Become root:
@@ -81,6 +71,8 @@ vmstat
 who -b
 # or
 uptime
+# to get uptime with seconds precision
+uptime -s
 ```
 
 - List block devices:
@@ -165,7 +157,7 @@ ___
 ```sh
 sudo -V
 # or
-dpkg -s sudo
+dpkg -s sudo | grep Status
 ```
 
 - Create a new user:
@@ -206,8 +198,6 @@ sudo vim /etc/sudoers.d/sudo_config
 - Get `sudo` log file:
 ```sh
 sudo vim /var/log/sudo/sudo_config
-# and number of commands invoked by `sudo`
-journalctl _COMM=sudo | grep COMMAND | wc -l
 ```
 
 - Get the system's journal
