@@ -214,7 +214,7 @@ ___
 - [x] Set the name of the logical volume: `var-log`;
 - [x] Set it's size to: `4g`;
 > [!Important] 
-> `srv` size in Bytes
+> `var-log` size in Bytes
 >
 > `4294967296 B`
 - [x] Click `Finish`to end the configuration of the logical volumes;
