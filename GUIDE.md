@@ -100,7 +100,6 @@ ___
 - [x] Set clock to Lisbon;
 ___
 ## Partitioning the Disk (Bonus)
-[[Disk Partitions]]
 - [x] Select `Manual` partition method;
 - [x] Select the available volume;
 > [!Note]
