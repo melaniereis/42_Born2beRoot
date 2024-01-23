@@ -75,7 +75,7 @@ sudo vim /proc/cpuinfo
 ```
 
 > [!Note]
-> More on `proc` command:
+> More on `proc` file format:
 > - https://man7.org/linux/man-pages/man5/proc.5.html
 
 - Get memory info:
