@@ -107,6 +107,7 @@ vmstat
 > [!Note]
 > More on `top` command:
 > - https://man7.org/linux/man-pages/man1/top.1.html
+>
 > More on `vmstat` command:
 > - https://man7.org/linux/man-pages/man8/vmstat.8.html
 
