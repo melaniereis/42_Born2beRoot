@@ -132,6 +132,10 @@ uptime -s
 lsblk
 ```
 
+> [!Note]
+> More on `lsblk` command:
+> - https://man7.org/linux/man-pages/man8/lsblk.8.html
+
 - Check `users`:
 ```sh
 users
