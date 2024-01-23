@@ -2,10 +2,15 @@
 
 ## System Commands
 
-- Become root:
+- Switch user command, allows to run commands with another users privileges, by default the root user:
 ```sh
 su
 ```
+
+![!Note]
+> More Info:
+> - https://man7.org/linux/man-pages/man1/su.1.html
+> - https://linuxize.com/post/su-command-in-linux/
 
 - Shutdown the VM:
 ```sh
