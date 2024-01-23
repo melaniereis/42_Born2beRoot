@@ -172,6 +172,12 @@ ss -tunlp
 > More on `ss` command:
 > - https://man7.org/linux/man-pages/man8/ss.8.html
 
+
+- Check if there is a `GUI` installed:
+```sh
+ls /usr/bin/*session
+```
+
 ___
 
 ## `cron` Commands
@@ -191,10 +197,16 @@ sudo /etc/init.d/cron stop
 sudo /etc/init.d/cron start
 ```
 
-- Check if there is a `GUI` installed:
-```sh
-ls /usr/bin/*session
-```
+> [!Note]
+> More on `crontab` command:
+> - https://man7.org/linux/man-pages/man1/crontab.1.html
+>
+> More on `crontab` file format:
+> - https://man7.org/linux/man-pages/man5/crontab.5.html
+>
+> More on `cron` System Administration service:
+> - https://man7.org/linux/man-pages/man8/cron.8.html
+
 ___
 
 ## `ufw` Commands
