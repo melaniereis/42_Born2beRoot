@@ -133,7 +133,7 @@ uptime -s
 > More on `uptime` command:
 > - https://man7.org/linux/man-pages/man1/uptime.1.html
 
-- List block devices:
+- List information about all available block devices:
 ```sh
 lsblk
 ```
@@ -185,6 +185,10 @@ ss -tunlp
 ```sh
 ls /usr/bin/*session
 ```
+
+> [!Note]
+> More on `session` file format:
+> - https://www.linuxadictos.com/en/comprobar-existe-entorno-grafico-instalado-consola.html
 
 ___
 
@@ -243,6 +247,11 @@ sudo ufw allow <port>
 ```sh
 sudo ufw delete <port>
 ```
+
+> [!Note]
+> More on `ufw` command:
+> - https://manpages.ubuntu.com/manpages/trusty/en/man8/ufw.8.html
+
 ___
 
 ## `sudo` Commands
