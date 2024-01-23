@@ -114,8 +114,6 @@ vmstat
 - Get boot info:
 ```sh
 who -b
-# or
-uptime
 # to get uptime in yyyy-mm-dd HH:MM:SS format
 uptime -s
 ```
@@ -142,6 +140,13 @@ users
 # or for more info
 w
 ```
+
+> [!Note]
+> More on `users` command:
+> - https://man7.org/linux/man-pages/man1/users.1.html
+>
+> More on `w` command:
+> - https://man7.org/linux/man-pages/man1/w.1.html
 
 - Show routing, network devices, interfaces and tunnels:
 ```sh
