@@ -156,6 +156,13 @@ ip --color a
 vim /etc/network/interfaces
 ```
 
+> [!Note]
+> More on `ip` command:
+> - https://man7.org/linux/man-pages/man8/ip.8.html
+>
+> More on `/etc/network/interfaces` command:
+> - https://man7.org/linux/man-pages/man5/networks.5.html
+
 - Check all system sockets:
 ```sh
 ss -tunlp
