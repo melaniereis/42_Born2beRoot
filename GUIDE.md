@@ -51,6 +51,8 @@
 
 <!-- mtoc-end -->
 
+___
+
 ## Installing the Virtual Machine 🛠
 - [x] Open **VirtualBox** and click `new`;
 - [x] Give the VM a name;
