@@ -20,7 +20,7 @@ systemctl
 ```
 
 > [!Note]
-> More on `systemctl` commands:
+> More on `systemctl` command:
 > - https://www.commandlinux.com/man-page/man1/systemctl.1.html
 
 
@@ -46,7 +46,7 @@ sudo reboot hostnamectl
 ```
 
 > [!Note]
-> More on `hostnamectl` commands:
+> More on `hostnamectl` command:
 > - https://www.commandlinux.com/man-page/man1/systemctl.1.html
 
 
@@ -66,7 +66,7 @@ uname -a
 ```
 
 > [!Note]
-> More on `uname` commands:
+> More on `uname` command:
 > - https://man7.org/linux/man-pages/man1/uname.1.html
 
 - Get cpu info:
@@ -75,7 +75,7 @@ sudo vim /proc/cpuinfo
 ```
 
 > [!Note]
-> More on `proc` commands:
+> More on `proc` command:
 > - https://man7.org/linux/man-pages/man5/proc.5.html
 
 - Get memory info:
@@ -84,7 +84,7 @@ free
 ```
 
 > [!Note]
-> More on `free` commands:
+> More on `free` command:
 > - https://man7.org/linux/man-pages/man1/free.1.html
 > - https://ioflood.com/blog/free-linux-command/
 
@@ -93,12 +93,22 @@ free
 df
 ```
 
+> [!Note]
+> More on `df` command:
+> - https://man7.org/linux/man-pages/man1/df.1.html
+
 - Display processes:
 ```sh
 top
 # Or
 vmstat
 ```
+
+> [!Note]
+> More on `top` command:
+> - https://man7.org/linux/man-pages/man1/top.1.html
+> More on `vmstat` command:
+> - https://man7.org/linux/man-pages/man8/vmstat.8.html
 
 - Get boot info:
 ```sh
