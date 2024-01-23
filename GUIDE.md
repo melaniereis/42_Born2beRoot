@@ -17,10 +17,10 @@
   * [Installing **SSH**](#installing-ssh)
     * [Installing **vim**](#installing-vim)
     * [Configuring **SSH**](#configuring-ssh)
-  * [Connecting via **SSH**](#connecting-via-ssh)
   * [Close Unnecessary Connections](#close-unnecessary-connections)
   * [Installing **git**](#installing-git)
   * [Installing & Configuring **UFW** 🔥🧱](#installing--configuring-ufw-)
+  * [Connecting via **SSH**](#connecting-via-ssh)
   * [Configuring **sudo** policies and log](#configuring-sudo-policies-and-log)
   * [Change **hostname**  (for the defense)](#change-hostname--for-the-defense)
   * [Configuring Password Policy 🔑](#configuring-password-policy-)
@@ -398,25 +398,6 @@ sudo service ssh status
 ```
 
 ___
-### Connecting via **SSH**
-- [ ] Get **VM**'s IP:
-```sh
-hostname -I
-```
-- [ ] Close the VM and go to `Settings`;
-- [ ] Click on `Network`, then `Advanced`; 
-- [ ] Change `Attached to:` from `NAT` to `Bridged Adapter`;
-- [ ] Click `OK`;
-- [ ] Re-open the **VM** and decrypt it:
-- [ ] Open a terminal and connect to the **VM**:
-```sh
-ssh passunca@10.11.246.116 -p 4242
-```
-- [ ] To close the connection:
-```sh
-exit
-```
-___
 ### Close Unnecessary Connections
 
 - [ ] Check system sockets:
@@ -486,6 +467,26 @@ sudo ufw status
 > - `sudo ufw status numbered`
 > ### Refs
 > - [UFW: Common Firewall Rules and Commands – TecAdmin](https://tecadmin.net/ufw-common-firewall-rules-and-commands/)
+
+___
+### Connecting via **SSH**
+- [ ] Get **VM**'s IP:
+```sh
+hostname -I
+```
+- [ ] Close the VM and go to `Settings`;
+- [ ] Click on `Network`, then `Advanced`; 
+- [ ] Change `Attached to:` from `NAT` to `Bridged Adapter`;
+- [ ] Click `OK`;
+- [ ] Re-open the **VM** and decrypt it:
+- [ ] Open a terminal and connect to the **VM**:
+```sh
+ssh passunca@10.11.246.116 -p 4242
+```
+- [ ] To close the connection:
+```sh
+exit
+```
 
 ___
 ### Configuring **sudo** policies and log
