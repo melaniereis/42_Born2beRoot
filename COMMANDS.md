@@ -55,10 +55,18 @@ sudo reboot hostnamectl
 sudo vim /etc/login.defs
 ```
 
+> [!Note]
+> More on `login.defs` file format and configuration:
+> - https://man7.org/linux/man-pages/man5/login.defs.5.html
+
 - Get user's password policy:
 ```sh
 sudo vim /etc/pam.d/common-password
 ```
+
+> [!Note]
+> More on `PAM` configuration files:
+> - https://www.man7.org/linux/man-pages/man5/pam.d.5.html
 
 - Get system architecture:
 ```sh
