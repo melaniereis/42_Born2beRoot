@@ -160,13 +160,18 @@ vim /etc/network/interfaces
 > More on `ip` command:
 > - https://man7.org/linux/man-pages/man8/ip.8.html
 >
-> More on `/etc/network/interfaces` command:
+> More on `/etc/network` file format:
 > - https://man7.org/linux/man-pages/man5/networks.5.html
 
 - Check all system sockets:
 ```sh
 ss -tunlp
 ```
+
+> [!Note]
+> More on `ss` command:
+> - https://man7.org/linux/man-pages/man8/ss.8.html
+
 ___
 
 ## `cron` Commands
