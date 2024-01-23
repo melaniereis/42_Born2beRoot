@@ -463,16 +463,16 @@ ss -tunlp
 > - `-n` or `--numeric`: Do not try to resolve service names into human-readable form. Show exact numeric values;
 > - `-l` or `--listening`: Display only listening sockets;
 > - [NetworkConfiguration - Debian Wiki](https://wiki.debian.org/NetworkConfiguration)
-- [x] Get `ip` address:
+- [ ] Get `ip` address:
 ```sh
 ip --color addr
 ```
-- [x] Get System's Network Interfaces
+- [ ] Get System's Network Interfaces
 ```sh
 vim /etc/network/interfaces
 ```
 
-- [x] Editing it by setting `# The primary network interface` from `dhcp` to `static`:
+- [ ] Editing it by setting `# The primary network interface` from `dhcp` to `static`:
 ```
 iface enp0s inet static
 	address xxx.x.x.x/xx
@@ -486,7 +486,7 @@ iface enp0s inet static
 
 ___
 ### Configuring **sudo** policies and log
-- [x] Create the following file:
+- [ ] Create the following file:
 ```sh
 touch /etc/sudoers.d/sudo_config
 ```
@@ -495,7 +495,7 @@ touch /etc/sudoers.d/sudo_config
 > [!Note]
 > This file will store the system's **sudo** policy
 
-- [x] Open `sudo_config` to setup policy
+- [ ] Open `sudo_config` to setup policy
 ```sh
 vim /etc/sudoers.d/sudo_config
 ```
@@ -530,7 +530,7 @@ Defaults  secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/
 > > - Used when a system admin doesn't trust **sudo** users to have a secure **PATH** environment variable;
 > > - Separates `root path` from `user path`;
 
-- [x] Create the following directory:
+- [ ] Create the following directory:
 ```sh
 mkdir /var/log/sudo
 ```
@@ -566,21 +566,21 @@ sudo reboot hostnamectl
 ```
 ___
 ### Configuring Password Policy 🔑
-- [x] Open `login.defs`:
+- [ ] Open `login.defs`:
 ```sh
 vim /etc/login.defs
 ```
 
-- [x] Set `PASS_MAX_DAYS`to 30;
-- [x] Set `PASS_MIN_DAYS` to 2;
-- [x] Set `PASS_WARN_AGE` to 7;
-- [x] Update already created user's password policy:
+- [ ] Set `PASS_MAX_DAYS`to 30;
+- [ ] Set `PASS_MIN_DAYS` to 2;
+- [ ] Set `PASS_WARN_AGE` to 7;
+- [ ] Update already created user's password policy:
 ```sh
 chage -M 30 -m 2 -W 7
 # or
 passwd -x 30 -n 2 -w 7
 ```
-- [x] Install **libpam-pwquality**:
+- [ ] Install **libpam-pwquality**:
 ```sh
 sudo apt install libpam-pwquality
 ```
@@ -589,12 +589,12 @@ sudo apt install libpam-pwquality
 > Provides common functions for password quality checking and scoring based on their apparent randomness; this library also provides a function for generating random passwords with good pronounceability;
 > - [Debian -- Details of package libpam-pwquality in buster](https://packages.debian.org/buster/libpam-pwquality)
 
-- [x] Configure **libpam-pwquality**:
+- [ ] Configure **libpam-pwquality**:
 ```sh
 sudo vim /etc/pam.d/common-password
 ```
 
-- [x] On the `per-package` section after `retry=3` add the following as inline options
+- [ ] On the `per-package` section after `retry=3` add the following as inline options
 ```
 minlen=10
 ucredit=-1
@@ -629,27 +629,27 @@ ___
 ## Monitoring Script 🚨
 
 ### Get System Info
-- [x] Get system **Architecture** info:
+- [ ] Get system **Architecture** info:
 ```sh
 uname -a
 ```
-- [x] Get system's number of **Physical Cores**:
+- [ ] Get system's number of **Physical Cores**:
 ```sh
 grep "physical id" /proc/cpuinfo | wc -l
 ```
-- [x] Get system's number of **Virtual Cores**:
+- [ ] Get system's number of **Virtual Cores**:
 ```sh
 grep processor /proc/cpuinfo | wc -l
 ```
-- [x] Get amount of used **RAM**:
+- [ ] Get amount of used **RAM**:
 ```sh
 free --mega | awk '$1 == "Mem:" {print $3}'
 ```
-- [x] Get total amount of memory in the system:
+- [ ] Get total amount of memory in the system:
 ```sh
 free --mega | awk '$1 == "Mem:" {print $2}'
 ```
-- [x] Get used memory percentage:
+- [ ] Get used memory percentage:
 ```sh
 free --mega | awk '$1 == "Mem:" {printf("(%.2f%%)\n", $3/$2*100)}'
 ```
@@ -663,16 +663,16 @@ free --mega | awk '$1 == "Mem:" {printf("(%.2f%%)\n", $3/$2*100)}'
 > Command: `free`
 > for more on the **free** command;
 
-- [x] Get amount of used disk memory:
+- [ ] Get amount of used disk memory:
 ```sh
 df -Bm | grep "/dev/" | grep -v "/boot" | awk '{used += $3} END {print used}'
 ```
-- [x] Get system's total Disk space:
+- [ ] Get system's total Disk space:
 ```sh
 df -m | grep "/dev/" | grep -v "/boot/" | awk '{total_mem += $2} END {printf ("%.0fGb\n"), total_mem/1024}'
 ```
 
-- [x] Get used memory percentage
+- [ ] Get used memory percentage
 ```sh
 df -m | grep "/dev/" | grep -v "/boot" | awk '{used += $3} {total += $2} END {printf("(%d%%)\n"), used/total*100}'
 ```
@@ -696,7 +696,7 @@ df -m | grep "/dev/" | grep -v "/boot" | awk '{used += $3} {total += $2} END {pr
 
 ___
 ### CPU Information
-- [x] Get percentage of **CPU** usage:
+- [ ] Get percentage of **CPU** usage:
 ```sh
 vmstat 1 4 | tail -1 | awk '{print %15}'
 # or
@@ -716,7 +716,7 @@ top -bn1 | tail +8 | awk '{ cpul += $9 } END { printf("%.1f"), cpul }'
 
 ___
 ### Last Reboot
-- [x] Get Date and Time of last reboot:
+- [ ] Get Date and Time of last reboot:
 ```sh
 who -b | awk '$1 == "system" {print $3 " " $4}'
 ```
@@ -728,7 +728,7 @@ who -b | awk '$1 == "system" {print $3 " " $4}'
 
 ___
 ### **LVM** check
-- [x] Check if **LVM** is active:
+- [ ] Check if **LVM** is active:
 ```sh
 if [ $(lsblk | grep "lvm" | wc -l) -gt 0 ]; then echo yes; else echo no; fi
 ```
@@ -745,7 +745,7 @@ if [ $(lsblk | grep "lvm" | wc -l) -gt 0 ]; then echo yes; else echo no; fi
 
 ___
 ### **TCP** connection
-- [x] Check for the number of established **TCP** connections:
+- [ ] Check for the number of established **TCP** connections:
 ```sh
 ss -ta | grep ESTAB | wc -l
 ```
@@ -757,7 +757,7 @@ ss -ta | grep ESTAB | wc -l
 
 ___
 ### Number of users
-- [x] Get number of users:
+- [ ] Get number of users:
 ```sh
 users | wc -w
 ```
@@ -769,11 +769,11 @@ users | wc -w
 
 ___
 ### **IP Address** & **MAC**
-- [x] Get host IP address
+- [ ] Get host IP address
 ```sh
 hostname -I
 ```
-- [x] Get the MAC address
+- [ ] Get the MAC address
 ```sh
 ip link | grep "link/ether" | awk '{print $2}'
 ```
@@ -789,7 +789,7 @@ ip link | grep "link/ether" | awk '{print $2}'
 
 ___
 ### Number of commands invoked by `sudo`
-- [x] Get number of commands invoked by `sudo`
+- [ ] Get number of commands invoked by `sudo`
 ```sh
 journalctl _COMM=sudo | grep COMMAND | wc -l
 ```
@@ -847,22 +847,22 @@ ___
 ## Bonus Services
 
 ### Setup `lighttpd` to serve **WordPress**
-- [x] Install `lighttpd`  packages:
+- [ ] Install `lighttpd`  packages:
 ```sh
 sudo apt install lighttpd
 ```
 
-- [x] Check if `lighttpd` was successfully installed:
+- [ ] Check if `lighttpd` was successfully installed:
 ```sh
 dpkg -l | grep lighttpd
 ```
 
-- [x] Open a connection on `port 80` by running:
+- [ ] Open a connection on `port 80` by running:
 ```sh
 sudo ufw allow 80
 ```
 
-- [x] Check available port status
+- [ ] Check available port status
 ```sh
 sudo ufw status
 ```
@@ -870,12 +870,12 @@ sudo ufw status
 
 ___
 ### Installing **WordPress**
-- [x] Get `wget` and `zip` packages:
+- [ ] Get `wget` and `zip` packages:
 ```sh
 sudo apt install wget zip
 ```
 
-- [x] Go to the `/var/www/` directory:
+- [ ] Go to the `/var/www/` directory:
 ```sh
 cd /var/www/
 ```
@@ -884,27 +884,27 @@ cd /var/www/
 > [!Note]
 > => [server - Why is /var/www a recommended location to host your web app? - Ask Ubuntu](https://askubuntu.com/questions/877261/why-is-var-www-a-recommended-location-to-host-your-web-app)
 
-- [x] Get **WordPress** packages:
+- [ ] Get **WordPress** packages:
 ```sh
 sudo wget https://wordpress.org/latest.zip
 ```
 
-- [x] Unzip archive:
+- [ ] Unzip archive:
 ```sh
 sudo unzip latest.zip
 ```
 
-- [x] Rename `html/` folder to `html_old/`;
+- [ ] Rename `html/` folder to `html_old/`;
 ```sh
 sudo mv html/ html_old/
 ```
 
-- [x] Rename `wordpress/` folder to `html`/
+- [ ] Rename `wordpress/` folder to `html`/
 ```sh
 sudo mv wordpress/ html/
 ```
 
-- [x] Set permissions for `html/` folder:
+- [ ] Set permissions for `html/` folder:
 ```sh
 sudo chmod -R 755 html
 ```
@@ -920,17 +920,17 @@ sudo chmod -R 755 html
 
 ____
 ### Installing **MariaDB**
-- [x] Install **MariaDB** packages:
+- [ ] Install **MariaDB** packages:
 ```sh
 sudo apt install mariadb-server
 ```
 
-- [x] Check if **MariaDB** installed successfully;
+- [ ] Check if **MariaDB** installed successfully;
 ```sh
 dpkg -l | grep mariadb-server`
 ```
 
-- [x] Get Security package that restricts access to the server and removed unused accounts:
+- [ ] Get Security package that restricts access to the server and removed unused accounts:
 ```sh
 sudo mysql_secure_installation
 ```
@@ -946,59 +946,59 @@ sudo mysql_secure_installation
 > - [MySQL :: MySQL 8.0 Reference Manual :: 4.4.2 mysql\_secure\_installation — Improve MySQL Installation Security](https://dev.mysql.com/doc/refman/8.0/en/mysql-secure-installation.html)
 
 Set `mysql_secure_installation` options as follows:
-- [x] **Because the root account is already protected** press enter to proceed with the configuration process;
-- [x] **Switch to unix_socket authentication? → N**
+- [ ] **Because the root account is already protected** press enter to proceed with the configuration process;
+- [ ] **Switch to unix_socket authentication? → N**
 > Choose `N` because the root is already protected;
-- [x] **Change the root password? → N**
+- [ ] **Change the root password? → N**
 > Choose `N` because the root is already protected;
-- [x] **Remove anonymous users? → Y**
+- [ ] **Remove anonymous users? → Y**
 > Choosing `Y` removes default passwordless anonymous user before moving to production;
-- [x] **Disallow root login remotely? → Y**
+- [ ] **Disallow root login remotely? → Y**
 > Ensures that a bad actor cannot guess at the root password from the network
-- [x] **Remove test database and access to it? → Y**
+- [ ] **Remove test database and access to it? → Y**
 > By default **MariaDB** comes with a `test` DB that anyone can access, remove it;
-- [x] **Reload privilege tables now? → Y**
+- [ ] **Reload privilege tables now? → Y**
 > Choose `Y` to reload permission tables so that the security settings take effect immediately
 
 ___
 ### Configuring **MariaDB**
 
-- [x] Enter **MariaDB**:
+- [ ] Enter **MariaDB**:
 ```sh
 sudo mariadb
 ```
 
-- [x] Create a database for **WordPress**:
+- [ ] Create a database for **WordPress**:
 ```sql
 MariaDB [(none)]> CREATE DATABASE wp_database;
 ```
 
-- [x] Check if DB was successfully created:
+- [ ] Check if DB was successfully created:
 ```sql
 MariaDB [(none)]> SHOW DATABASES;
 ```
 
-- [x] Create a user for the database:
+- [ ] Create a user for the database:
 ```sql
 MariaDB [(none)]> CREATE USER 'passunca'@'localhost' IDENTIFIED BY '424242';
 ```
 
-- [x] Bind the new user to the new DB to grant him permissions to work:
+- [ ] Bind the new user to the new DB to grant him permissions to work:
 ```sql
 MariaDB [(none)]> GRANT ALL PRIVILEGES ON wp_database.* TO 'passunca'@'localhost';
 ```
 
-- [x] Update Privileges for changes to take place:
+- [ ] Update Privileges for changes to take place:
 ```sql
 MariaDB [(none)]> FLUSH PRIVILEGES
 ```
 
-- [x] List all present users of **MariaDB**:
+- [ ] List all present users of **MariaDB**:
 ```sql
 MariaDB [(none)]> SELECT User FROM mysql.user;
 ```
 
-- [x] When done exit **MariaDB**
+- [ ] When done exit **MariaDB**
 ```sql
 MariaDB [(none)]> exit
 ```
@@ -1011,12 +1011,12 @@ MariaDB [(none)]> exit
 
 ____
 ### Installing **PHP**
-- [x] Get **php-cgi** and **php-mysql**:
+- [ ] Get **php-cgi** and **php-mysql**:
 ```sh
 sudo apt install php-cgi php-mysql
 ```
 
-- [x] Check if **PHP** installed successfully:
+- [ ] Check if **PHP** installed successfully:
 ```sh
 dpkg -l | grep php
 ```
@@ -1027,39 +1027,39 @@ ___
 ```sh
 cd /var/www/html
 ```
-- [x] Copy & Rename **wp-config-sample.php**:
+- [ ] Copy & Rename **wp-config-sample.php**:
 ```sh
 cp wp-config-sample.php wp-config.php
 ```
-- [x] Open **wp-config.php** for editing:
+- [ ] Open **wp-config.php** for editing:
 ```sh
 vim wp-config.php
 ```
-- [x] Modify the following values:
+- [ ] Modify the following values:
 > => Set `database_name_here` to `wp_databse`;
 >
 > => Set `username_here` to `passunca`;
 >
 > => Set `password_here` to `Zedro42beDB`;
-- [x] Enable **lighttpd**'s **fastcgi** to improve the performance and speed of web apps on the server;
+- [ ] Enable **lighttpd**'s **fastcgi** to improve the performance and speed of web apps on the server;
 ```sh
 sudo lighty-enable-mod fastcgi
 ```
-- [x] Enable **lighttpd**'s **fastcgi-php** to improve the performance and speed of **PHP**-based web applications on the server;
+- [ ] Enable **lighttpd**'s **fastcgi-php** to improve the performance and speed of **PHP**-based web applications on the server;
 ```sh
 sudo lighty-enable-mod fastcgi-php
 ```
-- [x] Reload **lighttpd** to apply changes:
+- [ ] Reload **lighttpd** to apply changes:
 ```sh
 sudo service lighttpd force-reload
 ```
-- [x] Get the VMs IP address:
+- [ ] Get the VMs IP address:
 ```sh
 hostname -I
 ```
-- [x] Open the browser and type your address:
+- [ ] Open the browser and type your address:
 > `<vm_ip_address>`
-- [x] Input the requested information to setup and install **WordPress**:
+- [ ] Input the requested information to setup and install **WordPress**:
 > => Title of the Site => `passunca WP;`
 >
 > => Username => `wp-passunca`;
@@ -1067,10 +1067,10 @@ hostname -I
 > => Password => `Zedro42beDB`;
 >
 > => email => `passunca@student.42porto.com`;
-- [x] Click `Install Wordpress`;
-- [x] Access the server on the browser
+- [ ] Click `Install Wordpress`;
+- [ ] Access the server on the browser
 > `<vm_ip_address>`
-- [x] To access the admin panel change the address to:
+- [ ] To access the admin panel change the address to:
 > `<vm_ip_address>/wp-admin`
 - [ ] Customizing the page is optional
 > - Have some fun!
