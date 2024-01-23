@@ -59,9 +59,9 @@
 - [x] Create a new hard drive for the VM;
 - [x] Make the hard drive a **VDI** archive;
 - [x] Make the hard drive's memory dynamically allocated;
-- [x] Allocate 30 GB to account to account for the bonus:
+- [x] Allocate 30 GB to account for the bonus:
 > [!Important]
-> **VM**'s size in Bytes:
+> <kbd>VM</kbd>'s size in Bytes:
 >
 > `33079636992 B`
 - [x] Click `Create`;
@@ -81,20 +81,20 @@ ___
 - [x] Set keyboard to `American English`;
 - [x] Set a `hostname` for the VM:
 > [!Important]
-> **hostname**'s name:
+> <kbd>hostname</kbd>'s name:
 >
 > `passunca42`;
 - [x] Leave network settings blank (not required by the subject);
 - [x] Set password for `root` user;
 > [!IMPORTANT]
-> `Root` Password:
+> <kbd>Root</kbd> Password:
 >
 > `Zedro42beRoot`
 - [x] Set user full name for user: `passunca`;
 - [x] Set user username: `passunca`;
 - [x] Set user password;
 > [!IMPORTANT]
-> `User` Password:
+> <kbd>User</kbd> Password:
 >
 > `Zedro42beUser`
 - [x] Set clock to Lisbon;
@@ -146,7 +146,7 @@ ___
 - [x] Hit `Cancel` because there's nothing to encrypt;
 - [x] Set encryption passphrase;
 > [!IMPORTANT]
-> `user` Password
+> <kbd>User</kbd> Password
 > 
 > `Zedro42beCrypt`
 
@@ -165,7 +165,7 @@ ___
 - [x] Set the name of the logical volume: `root`;
 - [x] Set it's size to: `10g`;
 >[!Important]
-> `root` size in Bytes
+> <kbd>root</kbd> size in Bytes
 >
 > `10737418240 B`
 - [x] Select `Create logical volume`;
@@ -173,7 +173,7 @@ ___
 - [x] Set the name of the logical volume: `swap`;
 - [x] Set it's size to: `2.3g`;
 > [!Important]
-> `swap` size in Bytes
+> <kbd>swap</kbd> size in Bytes
 >
 > `2465607424 B`
 - [x] Select `Create logical volume`;
@@ -181,7 +181,7 @@ ___
 - [x] Set the name of the logical volume: `home`;
 - [x] Set it's size to: `5g`;
 >[!Important]
-> `home` size in Bytes
+> <kbd>home</kbd> size in Bytes
 >
 >`5368709120 B`
 - [x] Select `Create logical volume`;
@@ -189,7 +189,7 @@ ___
 - [x] Set the name of the logical volume: `var`;
 - [x] Set it's size to: `3g`;
 > [!Important]
-> `var` size in Bytes
+> <kbd>var</kbd> size in Bytes
 >
 >`3221225472 B`
 - [x] Select `Create logical volume`;
@@ -197,7 +197,7 @@ ___
 - [x] Set the name of the logical volume: `srv`;
 - [x] Set it's size to: `3g`;
 > [!Important]
-> `srv` size in Bytes
+> <kbd>srv</kbd> size in Bytes
 >
 > `3221225472 B`
 - [x] Select `Create logical volume`;
@@ -205,7 +205,7 @@ ___
 - [x] Set the name of the logical volume: `tmp`;
 - [x] Set it's size to: `3g`;
 > [!Important]
-> `tmp` size in Bytes
+> <kbd>tmp</kbd> size in Bytes
 >
 > `3221225472 B`
 - [x] Select `Create logical volume`;
@@ -213,7 +213,7 @@ ___
 - [x] Set the name of the logical volume: `var-log`;
 - [x] Set it's size to: `4g`;
 > [!Important] 
-> `var-log` size in Bytes
+> <kbd>var-log</kbd> size in Bytes
 >
 > `4294967296 B`
 - [x] Click `Finish`to end the configuration of the logical volumes;
