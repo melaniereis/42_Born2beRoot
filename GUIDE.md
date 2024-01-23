@@ -276,6 +276,8 @@ ___
 - [x] Switch user to `root`:
 ```sh
 su --login
+# Or the shorthand:
+su -
 ```
 - [x] Insert `root` password;
 - [x] To install **sudo** run:
