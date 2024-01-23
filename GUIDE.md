@@ -17,10 +17,9 @@
   * [Installing **SSH**](#installing-ssh)
     * [Installing **vim**](#installing-vim)
     * [Configuring **SSH**](#configuring-ssh)
-  * [Close Unnecessary Connections](#close-unnecessary-connections)
-  * [Installing **git**](#installing-git)
   * [Installing & Configuring **UFW** 🔥🧱](#installing--configuring-ufw-)
   * [Connecting via **SSH**](#connecting-via-ssh)
+  * [Close Unnecessary Connections](#close-unnecessary-connections)
   * [Configuring **sudo** policies and log](#configuring-sudo-policies-and-log)
   * [Change **hostname**  (for the defense)](#change-hostname--for-the-defense)
   * [Configuring Password Policy 🔑](#configuring-password-policy-)
@@ -400,47 +399,6 @@ sudo service ssh status
 ```
 
 ___
-### Close Unnecessary Connections
-
-- [ ] Check system sockets:
-```sh
-ss -tunlp
-```
-
-> [!Important]
-> `ss`'s **flags**
-> - `-t` or `--tcp`: display **TCP** connections;
-> - `-u` or `--udp`: display **UDP** connections;
-> - `-n` or `--numeric`: Do not try to resolve service names into human-readable form. Show exact numeric values;
-> - `-l` or `--listening`: Display only listening sockets;
-> - [NetworkConfiguration - Debian Wiki](https://wiki.debian.org/NetworkConfiguration)
-- [x] Get `ip` address:
-```sh
-ip --color addr
-```
-- [x] Get System's Network Interfaces
-```sh
-vim /etc/network/interfaces
-```
-
-- [x] Editing it by setting `# The primary network interface` from `dhcp` to `static`:
-```
-iface enp0s inet static
-	address xxx.x.x.x/xx
-	gateway xxx.x.x.xxx
-	netmask xxx.xxx.x.x
-	dns
-```
-___
-### Installing **git**
-- [x] To install **git** run:
-```sh
-apt install git
-```
-
-> [!Note]
-> [networking - UFW/IPTables: how to securely allow authenticated git access with github - Server Fault](https://serverfault.com/questions/370743/ufw-iptables-how-to-securely-allow-authenticated-git-access-with-github)
-___
 ### Installing & Configuring **UFW** 🔥🧱
 
 - [x] Install **UFW** packages:
@@ -489,6 +447,42 @@ ssh passunca@10.11.246.116 -p 4242
 ```sh
 exit
 ```
+
+___
+### Close Unnecessary Connections
+
+- [ ] Check system sockets:
+```sh
+ss -tunlp
+```
+
+> [!Important]
+> `ss`'s **flags**
+> - `-t` or `--tcp`: display **TCP** connections;
+> - `-u` or `--udp`: display **UDP** connections;
+> - `-n` or `--numeric`: Do not try to resolve service names into human-readable form. Show exact numeric values;
+> - `-l` or `--listening`: Display only listening sockets;
+> - [NetworkConfiguration - Debian Wiki](https://wiki.debian.org/NetworkConfiguration)
+- [x] Get `ip` address:
+```sh
+ip --color addr
+```
+- [x] Get System's Network Interfaces
+```sh
+vim /etc/network/interfaces
+```
+
+- [x] Editing it by setting `# The primary network interface` from `dhcp` to `static`:
+```
+iface enp0s inet static
+	address xxx.x.x.x/xx
+	gateway xxx.x.x.xxx
+	netmask xxx.xxx.x.x
+	dns
+```
+
+> [!Note]
+> [networking - UFW/IPTables: how to securely allow authenticated git access with github - Server Fault](https://serverfault.com/questions/370743/ufw-iptables-how-to-securely-allow-authenticated-git-access-with-github)
 
 ___
 ### Configuring **sudo** policies and log
