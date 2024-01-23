@@ -65,6 +65,10 @@ sudo vim /etc/pam.d/common-password
 uname -a
 ```
 
+> [!Note]
+> More on `uname` commands:
+> - https://man7.org/linux/man-pages/man1/uname.1.html
+
 - Get cpu info:
 ```sh
 sudo vim /proc/cpuinfo
@@ -74,6 +78,11 @@ sudo vim /proc/cpuinfo
 ```sh
 free
 ```
+
+> [!Note]
+> More on `free` commands:
+> - https://man7.org/linux/man-pages/man1/free.1.html
+> - https://ioflood.com/blog/free-linux-command/
 
 - Get disk info:
 ```sh
