@@ -53,99 +53,99 @@
 ___
 
 ## Installing the Virtual Machine 🛠
-- [x] Open **VirtualBox** and click `new`;
-- [x] Give the VM a name;
-- [x] Store the VM inside `/sgoinfre/` directory;
-- [x] Select total amount of RAM to reserve for the machine;
-- [x] Create a new hard drive for the VM;
-- [x] Make the hard drive a **VDI** archive;
-- [x] Make the hard drive's memory dynamically allocated;
-- [x] Allocate 30 GB to account for the bonus:
+- [ ] Open **VirtualBox** and click `new`;
+- [ ] Give the VM a name;
+- [ ] Store the VM inside `/sgoinfre/` directory;
+- [ ] Select total amount of RAM to reserve for the machine;
+- [ ] Create a new hard drive for the VM;
+- [ ] Make the hard drive a **VDI** archive;
+- [ ] Make the hard drive's memory dynamically allocated;
+- [ ] Allocate 30 GB to account for the bonus:
 > [!Important]
 > <kbd>VM</kbd>'s size in Bytes:
 >
 > `33079636992 B`
-- [x] Click `Create`;
-- [x] Go to `Settings` and click on `Storage`;
-- [x] Select the empty drive 💿 and click `Choose a disk file`;
-- [x] Select the `Debian ISO`and click `Open`, then click `ok`;
-- [x] Start the VM;
+- [ ] Click `Create`;
+- [ ] Go to `Settings` and click on `Storage`;
+- [ ] Select the empty drive 💿 and click `Choose a disk file`;
+- [ ] Select the `Debian ISO`and click `Open`, then click `ok`;
+- [ ] Start the VM;
 ___
 ## Installing Debian 🌀
 
-- [x] Select `Install` from the Debian GNU/Linux menu;
-- [x] Set the language to `English`;
-- [x] Set the location to `Other`;
-- [x] Set continent to `Europe`;
-- [x] Set country to `Portugal`;
-- [x] Set locales to `United States`;
-- [x] Set keyboard to `American English`;
-- [x] Set a `hostname` for the VM:
+- [ ] Select `Install` from the Debian GNU/Linux menu;
+- [ ] Set the language to `English`;
+- [ ] Set the location to `Other`;
+- [ ] Set continent to `Europe`;
+- [ ] Set country to `Portugal`;
+- [ ] Set locales to `United States`;
+- [ ] Set keyboard to `American English`;
+- [ ] Set a `hostname` for the VM:
 > [!Important]
 > <kbd>hostname</kbd>'s name:
 >
 > `passunca42`;
-- [x] Leave network settings blank (not required by the subject);
-- [x] Set password for `root` user;
+- [ ] Leave network settings blank (not required by the subject);
+- [ ] Set password for `root` user;
 > [!IMPORTANT]
 > <kbd>Root</kbd> Password:
 >
 > `Zedro42beRoot`
-- [x] Set user full name for user: `passunca`;
-- [x] Set user username: `passunca`;
-- [x] Set user password;
+- [ ] Set user full name for user: `passunca`;
+- [ ] Set user username: `passunca`;
+- [ ] Set user password;
 > [!IMPORTANT]
 > <kbd>User</kbd> Password:
 >
 > `Zedro42beUser`
-- [x] Set clock to Lisbon;
+- [ ] Set clock to Lisbon;
 ___
 ## Partitioning the Disk (Bonus)
-- [x] Select `Manual` partition method;
-- [x] Select the available volume;
+- [ ] Select `Manual` partition method;
+- [ ] Select the available volume;
 > [!Note]
 > The volume name may differ from system to system. Example:
 >
 > `SCSI1 (0,0,0) (sda) - 33.1 GB ATA VBOX HARDDISK`
-- [x] Confirm the creation of a new empty partition;
+- [ ] Confirm the creation of a new empty partition;
 ___
 #### Create Primary Partition
-- [x] Select `FREE SPACE`;
-- [x] Create a new partition;
-- [x] Make the partition size `500m` in bytes:
+- [ ] Select `FREE SPACE`;
+- [ ] Create a new partition;
+- [ ] Make the partition size `500m` in bytes:
 > [!Important]
 > Primary Partition size in Bytes
 >
 > `525336576 B`
-- [x] Set partition type to `Primary`;
-- [x] Set location for the new partition to `Beginning`;
-- [x] Set Mount point: `/boot`;
-- [x] Select `Done setting up the partition`;
+- [ ] Set partition type to `Primary`;
+- [ ] Set location for the new partition to `Beginning`;
+- [ ] Set Mount point: `/boot`;
+- [ ] Select `Done setting up the partition`;
 
 ___
 #### Create Logical Partition
-- [x] Select `FREE SPACE` again;
-- [x] Create a new partition;
-- [x] Set the size to `max`;
+- [ ] Select `FREE SPACE` again;
+- [ ] Create a new partition;
+- [ ] Set the size to `max`;
 >[!Important]
 > Logical Partition size in Bytes
 > 
 > `32554300416 B`
-- [x] Set partition type to `Logical`;
-- [x] Set Mount point to: `Do not mount it`;
-- [x] Select `Done setting up the partition`;
+- [ ] Set partition type to `Logical`;
+- [ ] Set Mount point to: `Do not mount it`;
+- [ ] Select `Done setting up the partition`;
 
 ___
 #### Encrypting Volumes
-- [x] Click `Configure encrypted volumes`;
-- [x] Accept confirmation message;
-- [x] Click `Create encrypted volumes`;
-- [x] Select device `/dev/sda5`for encryption;
-- [x] Select `Done setting up the partition`;
-- [x] Select `Finish`;
-- [x] Accept confirmation message to encrypt;
-- [x] Hit `Cancel` because there's nothing to encrypt;
-- [x] Set encryption passphrase;
+- [ ] Click `Configure encrypted volumes`;
+- [ ] Accept confirmation message;
+- [ ] Click `Create encrypted volumes`;
+- [ ] Select device `/dev/sda5`for encryption;
+- [ ] Select `Done setting up the partition`;
+- [ ] Select `Finish`;
+- [ ] Accept confirmation message to encrypt;
+- [ ] Hit `Cancel` because there's nothing to encrypt;
+- [ ] Set encryption passphrase;
 > [!IMPORTANT]
 > <kbd>User</kbd> Password
 > 
@@ -153,117 +153,117 @@ ___
 
 ___
 #### Configure Logical Volume Manager
-- [x] Click `Configure Logical Volume Manager`;
-- [x] Accept confirmation message;
-- [x] Click `Create volume group`;
-- [x] Set the name to `LVMGroup`;
-- [x] Select partition to store the group: `/dev/mapper/sda5_crypt`;
+- [ ] Click `Configure Logical Volume Manager`;
+- [ ] Accept confirmation message;
+- [ ] Click `Create volume group`;
+- [ ] Set the name to `LVMGroup`;
+- [ ] Select partition to store the group: `/dev/mapper/sda5_crypt`;
 
 ___
 ##### Create Logical Partitions
-- [x] Select `Create Logical Volume`;
-- [x] Select group: `LVMGroup`;
-- [x] Set the name of the logical volume: `root`;
-- [x] Set it's size to: `10g`;
+- [ ] Select `Create Logical Volume`;
+- [ ] Select group: `LVMGroup`;
+- [ ] Set the name of the logical volume: `root`;
+- [ ] Set it's size to: `10g`;
 >[!Important]
 > <kbd>root</kbd> size in Bytes
 >
 > `10737418240 B`
-- [x] Select `Create logical volume`;
-- [x] Select group: `LVMGroup`;
-- [x] Set the name of the logical volume: `swap`;
-- [x] Set it's size to: `2.3g`;
+- [ ] Select `Create logical volume`;
+- [ ] Select group: `LVMGroup`;
+- [ ] Set the name of the logical volume: `swap`;
+- [ ] Set it's size to: `2.3g`;
 > [!Important]
 > <kbd>swap</kbd> size in Bytes
 >
 > `2465607424 B`
-- [x] Select `Create logical volume`;
-- [x] Select group: `LVMGroup`;
-- [x] Set the name of the logical volume: `home`;
-- [x] Set it's size to: `5g`;
+- [ ] Select `Create logical volume`;
+- [ ] Select group: `LVMGroup`;
+- [ ] Set the name of the logical volume: `home`;
+- [ ] Set it's size to: `5g`;
 >[!Important]
 > <kbd>home</kbd> size in Bytes
 >
 >`5368709120 B`
-- [x] Select `Create logical volume`;
-- [x] Select group: `LVMGroup`;
-- [x] Set the name of the logical volume: `var`;
-- [x] Set it's size to: `3g`;
+- [ ] Select `Create logical volume`;
+- [ ] Select group: `LVMGroup`;
+- [ ] Set the name of the logical volume: `var`;
+- [ ] Set it's size to: `3g`;
 > [!Important]
 > <kbd>var</kbd> size in Bytes
 >
 >`3221225472 B`
-- [x] Select `Create logical volume`;
-- [x] Select group: `LVMGroup`;
-- [x] Set the name of the logical volume: `srv`;
-- [x] Set it's size to: `3g`;
+- [ ] Select `Create logical volume`;
+- [ ] Select group: `LVMGroup`;
+- [ ] Set the name of the logical volume: `srv`;
+- [ ] Set it's size to: `3g`;
 > [!Important]
 > <kbd>srv</kbd> size in Bytes
 >
 > `3221225472 B`
-- [x] Select `Create logical volume`;
-- [x] Select group: `LVMGroup`;
-- [x] Set the name of the logical volume: `tmp`;
-- [x] Set it's size to: `3g`;
+- [ ] Select `Create logical volume`;
+- [ ] Select group: `LVMGroup`;
+- [ ] Set the name of the logical volume: `tmp`;
+- [ ] Set it's size to: `3g`;
 > [!Important]
 > <kbd>tmp</kbd> size in Bytes
 >
 > `3221225472 B`
-- [x] Select `Create logical volume`;
-- [x] Select group: `LVMGroup`;
-- [x] Set the name of the logical volume: `var-log`;
-- [x] Set it's size to: `4g`;
+- [ ] Select `Create logical volume`;
+- [ ] Select group: `LVMGroup`;
+- [ ] Set the name of the logical volume: `var-log`;
+- [ ] Set it's size to: `4g`;
 > [!Important] 
 > <kbd>var-log</kbd> size in Bytes
 >
 > `4294967296 B`
-- [x] Click `Finish`to end the configuration of the logical volumes;
+- [ ] Click `Finish`to  nd the configuration of the logical volumes;
 ___
 
 ##### Setting Mount Points
-- [x] Select partition #1, `home`;
-- [x] Set `Use as` to `Ext4`;
-- [x] Set Mount Point: `/home`;
-- [x] Select `Done setting up the partition`;
-- [x] Select partition #1, `root`;
-- [x] Set `Use as` to `Ext4`;
-- [x] Set Mount Point: `/`;
-- [x] Select `Done setting up the partition`;
-- [x] Select partition #1, `srv`;
-- [x] Set `Use as` to `Ext4`;
-- [x] Set Mount Point: `/srv`;
-- [x] Select `Done setting up the partition`;
-- [x] Select partition #1, `swap`;
-- [x] Set `Use as` to `swap area`;
+- [ ] Select partition #1, `home`;
+- [ ] Set `Use as` to `Ext4`;
+- [ ] Set Mount Point: `/home`;
+- [ ] Select `Done setting up the partition`;
+- [ ] Select partition #1, `root`;
+- [ ] Set `Use as` to `Ext4`;
+- [ ] Set Mount Point: `/`;
+- [ ] Select `Done setting up the partition`;
+- [ ] Select partition #1, `srv`;
+- [ ] Set `Use as` to `Ext4`;
+- [ ] Set Mount Point: `/srv`;
+- [ ] Select `Done setting up the partition`;
+- [ ] Select partition #1, `swap`;
+- [ ] Set `Use as` to `swap area`;
 
 > [!Note] 
 > Research **Swap Partition**
 
-- [x] Select `Done setting up the partition`;
-- [x] Select partition #1, `tmp`;
-- [x] Set `Use as` to `Ext4`;
-- [x] Set Mount Point: `/tmp`;
-- [x] Select `Done setting up the partition`;
-- [x] Select partition #1, `var`;
-- [x] Set `Use as` to `Ext4`;
-- [x] Set Mount Point: `/var`;
-- [x] Select `Done setting up the partition`;
-- [x] Select partition #1, `var-log`;
-- [x] Set `Use as` to `Ext4`;
-- [x] Set Mount Point: `Enter manually`;
-- [x] Enter `/var/log`;
-- [x] Select `Done setting up the partition`;
-- [x] Click `Finish partitioning and write changes to disk;
-- [x] Accept confirmation message;
-- [x] Say **NO** to additional packages;
-- [x] Select country;
-- [x] Set Debian archive mirror package manager: `deb.debian.org`;
-- [x] Leave HTTP proxy empty and click `Continue`;
-- [x] Say **NO** to the popularity contest;
-- [x] Remove all software options and press `Continue`;
-- [x] Say `Yes` to the installation of **GRUB boot loader**;
-- [x] Select device to install the bootloader: `/dev/sda (ata_VBOX_HARDDISK)`;
-- [x] Select `Continue`;
+- [ ] Select `Done setting up the partition`;
+- [ ] Select partition #1, `tmp`;
+- [ ] Set `Use as` to `Ext4`;
+- [ ] Set Mount Point: `/tmp`;
+- [ ] Select `Done setting up the partition`;
+- [ ] Select partition #1, `var`;
+- [ ] Set `Use as` to `Ext4`;
+- [ ] Set Mount Point: `/var`;
+- [ ] Select `Done setting up the partition`;
+- [ ] Select partition #1, `var-log`;
+- [ ] Set `Use as` to `Ext4`;
+- [ ] Set Mount Point: `Enter manually`;
+- [ ] Enter `/var/log`;
+- [ ] Select `Done setting up the partition`;
+- [ ] Click `Finish partitioning and write changes to disk;
+- [ ] Accept confirmation message;
+- [ ] Say **NO** to additional packages;
+- [ ] Select country;
+- [ ] Set Debian archive mirror package manager: `deb.debian.org`;
+- [ ] Leave HTTP proxy empty and click `Continue`;
+- [ ] Say **NO** to the popularity contest;
+- [ ] Remove all software options and press `Continue`;
+- [ ] Say `Yes` to the installation of **GRUB boot loader**;
+- [ ] Select device to install the bootloader: `/dev/sda (ata_VBOX_HARDDISK)`;
+- [ ] Select `Continue`;
 
 > [!IMPORTANT]
 > Research **Ext4**
@@ -271,26 +271,26 @@ ___
 ___
 ## Virtual Machine Setup ⚙️
 ### Login into the system
-- [x] Enter encryption password;
-- [x] Enter user and password;
+- [ ] Enter encryption password;
+- [ ] Enter user and password;
 ### Installing **sudo** & configuring groups and users
-- [x] Switch user to `root`:
+- [ ] Switch user to `root`:
 ```sh
 su --login
 # Or the shorthand:
 su -
 ```
-- [x] Insert `root` password;
-- [x] To install **sudo** run:
+- [ ] Insert `root` password;
+- [ ] To install **sudo** run:
 ```sh
 apt install sudo
 ```
-- [x] Reboot the machine with the following command:
+- [ ] Reboot the machine with the following command:
 ```sh
 sudo reboot
 ```
-- [x] Login again with `user` and switch to `root`;
-- [x] Check **sudo**'s version with the command:
+- [ ] Login again with `user` and switch to `root`;
+- [ ] Check **sudo**'s version with the command:
 ```sh
 sudo -V
 ```
@@ -301,7 +301,7 @@ sudo -V
 > [!Important]
 > If the output is too large it can be redirected to a file with the following command: `sudo -V > file.txt`. Additionally the output could be piped `| more` to be conveniently displayed;
 
-- [x] Create a new user;
+- [ ] Create a new user;
 ```sh
 sudo adduser <login>
 ```
@@ -313,11 +313,11 @@ sudo adduser <login>
 >
 > password: `Zedro42beUser`
 
-- [x] Create a new group `user42`:
+- [ ] Create a new group `user42`:
 ```sh
 sudo addgroup user42
 ```
-- [x] Include `passunca` on both `sudo` and `user42` groups:
+- [ ] Include `passunca` on both `sudo` and `user42` groups:
 ```sh
 sudo adduser <user> <groupname>
 ```
@@ -334,17 +334,17 @@ sudo adduser <user> <groupname>
 
 ____
 ### Installing **SSH**
-- [x] Update the system package manager:
+- [ ] Update the system package manager:
 ```sh
 sudo apt update
 ```
 
-- [x] Install **OpenSSH**:
+- [ ] Install **OpenSSH**:
 ```sh
 sudo apt install openssh-server`
 ```
 
-- [x] When asked for confirmation type `Y`;
+- [ ] When asked for confirmation type `Y`;
 
 > [!Note]
 > To check the state of the system's **SSH** service:
@@ -355,14 +355,14 @@ sudo apt install openssh-server`
 
 ___
 #### Installing **vim**
-- [x] Run the command:
+- [ ] Run the command:
 ```sh
 sudo apt install vim
 ```
 ___
 #### Configuring **SSH**
-- [x] If not `root` switch to it with `su`;
-- [x] Open `sshd_config` with vim:
+- [ ] If not `root` switch to it with `su`;
+- [ ] Open `sshd_config` with vim:
 ```sh
 vim /etc/ssh/sshd_config
 ```
@@ -375,10 +375,10 @@ vim /etc/ssh/sshd_config
 > - [sshd\_config - How to Configure the OpenSSH Server?](https://www.ssh.com/academy/ssh/sshd_config)
 > - [sshd\_config(5): OpenSSH SSH daemon config file - Linux man page](https://linux.die.net/man/5/sshd_config)
 
-- [x] Set Port to `Port 4242`
-- [x] Set `PermitRootLogin no`
-- [x] Save changes and close file;
-- [x] Open `ssh_config` with vim:
+- [ ] Set Port to `Port 4242`
+- [ ] Set `PermitRootLogin no`
+- [ ] Save changes and close file;
+- [ ] Open `ssh_config` with vim:
 ```sh
 vim /etc/ssh/ssh_config
 ```
@@ -401,21 +401,21 @@ sudo service ssh status
 ___
 ### Installing & Configuring **UFW** 🔥🧱
 
-- [x] Install **UFW** packages:
+- [ ] Install **UFW** packages:
 ```sh
 sudo apt install ufw
 ```
-- [x] Start **UFW** using the command
+- [ ] Start **UFW** using the command
 ```sh
 sudo ufw enable
 ```
 
-- [x] Configure **Firewall** to accept connections on 4242 port
+- [ ] Configure **Firewall** to accept connections on 4242 port
 ```sh
 sudo ufw allow 4242
 ```
 
-- [x] Check the current state of the firewall
+- [ ] Check the current state of the firewall
 ```sh
 sudo ufw status
 ```
