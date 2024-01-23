@@ -134,10 +134,11 @@ lsblk
 > More on `lsblk` command:
 > - https://man7.org/linux/man-pages/man8/lsblk.8.html
 
-- Check `users`:
+- Check `users` information:
 ```sh
+# print the user names of users currently logged in to the current host
 users
-# or for more info
+# Show who is logged on and what they are doing.
 w
 ```
 
