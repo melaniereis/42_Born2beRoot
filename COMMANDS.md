@@ -8,9 +8,21 @@ su
 ```
 
 > [!Note]
-> More Info:
+> More on `su` command:
 > - https://man7.org/linux/man-pages/man1/su.1.html
 > - https://linuxize.com/post/su-command-in-linux/
+
+___
+
+- Control the systemd system and service manager:
+```sh
+systemctl
+```
+
+> [!Note]
+> More on `systemctl` commands:
+> - https://www.commandlinux.com/man-page/man1/systemctl.1.html
+
 
 - Shutdown the VM:
 ```sh
@@ -32,6 +44,11 @@ sudo vim /etc/hostname
 # Reboot to apply changes
 sudo reboot hostnamectl
 ```
+
+> [!Note]
+> More on `hostnamectl` commands:
+> - https://www.commandlinux.com/man-page/man1/systemctl.1.html
+
 
 - Get system login password policy file:
 ```sh
