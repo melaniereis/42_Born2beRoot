@@ -63,7 +63,6 @@ df
 top
 # Or
 vmstat
-
 ```
 
 - Get boot info:
@@ -152,6 +151,14 @@ sudo ufw delete <port>
 ___
 
 ## `sudo` Commands
+
+- Run an interactive login shell with root user's environment:
+```sh
+sudo -i
+```
+
+> ![Note]
+> - Is the same as running `su -`
 
 - Check `sudo`'s version and other stats:
 ```sh
