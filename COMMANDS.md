@@ -7,7 +7,7 @@
 su
 ```
 
-![!Note]
+> ![!Note]
 > More Info:
 > - https://man7.org/linux/man-pages/man1/su.1.html
 > - https://linuxize.com/post/su-command-in-linux/
