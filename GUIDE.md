@@ -275,7 +275,7 @@ ___
 ### Installing **sudo** & configuring groups and users
 - [x] Switch user to `root`:
 ```sh
-su
+su -
 ```
 - [x] Insert `root` password;
 - [x] To install **sudo** run:
