@@ -116,9 +116,16 @@ vmstat
 who -b
 # or
 uptime
-# to get uptime with seconds precision
+# to get uptime in yyyy-mm-dd HH:MM:SS format
 uptime -s
 ```
+
+> [!Note]
+> More on `who` command:
+> - https://man7.org/linux/man-pages/man1/who.1.html
+>
+> More on `uptime` command:
+> - https://man7.org/linux/man-pages/man1/uptime.1.html
 
 - List block devices:
 ```sh
