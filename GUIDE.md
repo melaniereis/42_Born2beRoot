@@ -11,6 +11,7 @@
     * [Configure Logical Volume Manager](#configure-logical-volume-manager)
       * [Create Logical Partitions](#create-logical-partitions)
       * [Setting Mount Points](#setting-mount-points)
+      * [Setting up Package Manager and the bootloader](#setting-up-package-manager-and-the-bootloader)
 * [Virtual Machine Setup ⚙️](#virtual-machine-setup-)
   * [Login into the system](#login-into-the-system)
   * [Installing **sudo** & configuring groups and users](#installing-sudo--configuring-groups-and-users)
@@ -254,6 +255,10 @@ ___
 - [ ] Enter `/var/log`;
 - [ ] Select `Done setting up the partition`;
 - [ ] Click `Finish partitioning and write changes to disk;
+
+___
+##### Setting up Package Manager and the bootloader
+
 - [ ] Accept confirmation message;
 - [ ] Say **NO** to additional packages;
 - [ ] Select country;
