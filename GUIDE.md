@@ -113,7 +113,7 @@ ___
 #### Create Primary Partition
 - [ ] Select `FREE SPACE`;
 - [ ] Create a new partition;
-- [ ] Make the partition size `500m` in bytes:
+- [ ] Make the partition size `500m`:
 > [!Important]
 > Primary Partition size in Bytes
 >
