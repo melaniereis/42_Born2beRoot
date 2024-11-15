@@ -57,6 +57,7 @@ ___
 - [ ] Open **VirtualBox** and click `new`;
 - [ ] Give the VM a name;
 - [ ] Store the VM inside `/sgoinfre/` directory;
+- [ ] Select `Skip Unattended Installation` checkbox;
 - [ ] Select total amount of RAM to reserve for the machine;
 - [ ] Create a new hard drive for the VM;
 - [ ] Make the hard drive a **VDI** archive;
